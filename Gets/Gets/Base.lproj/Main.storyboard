@@ -25,18 +25,27 @@
                                 <state key="normal" title="About us">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="cT7-hf-JEm" kind="show" id="Vq9-4O-w9O"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6F7-4Y-X8K">
                                 <rect key="frame" x="199" y="486" width="267" height="30"/>
                                 <state key="normal" title="MyPlaces">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="O28-WS-VDd" kind="show" id="3ew-qw-8VI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30C-Zz-TEz">
                                 <rect key="frame" x="59" y="486" width="66" height="30"/>
                                 <state key="normal" title="AddPlace">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Gj0-hf-8rd" kind="show" id="5n0-u6-p1S"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -103,6 +112,9 @@
                             <state key="normal" title="Main">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="FSG-Ce-tOt"/>
+                            </connections>
                         </button>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="94" id="0VH-EX-34q">
@@ -139,7 +151,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3QY-ws-NDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1475" y="313"/>
+            <point key="canvasLocation" x="1475" y="278"/>
         </scene>
         <!--Cadastro View-->
         <scene sceneID="whf-BL-jPI">
@@ -186,6 +198,9 @@
                                 <state key="normal" title="Voltar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="xKg-f2-aP2"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imagem" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ily-Ui-55v">
                                 <rect key="frame" x="236" y="238" width="128" height="20.5"/>
@@ -249,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2oe-FR-1Op" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-93" y="977"/>
+            <point key="canvasLocation" x="-87" y="1281"/>
         </scene>
         <!--Visualizar View-->
         <scene sceneID="lRm-hy-dss">
@@ -283,6 +298,9 @@
                                 <state key="normal" title="Voltar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="O28-WS-VDd" kind="show" id="H4M-Pm-Hcn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -305,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ofp-rg-K1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="619" y="985"/>
+            <point key="canvasLocation" x="737" y="1281"/>
         </scene>
         <!--About Us View-->
         <scene sceneID="zuW-wA-9da">
@@ -323,7 +341,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pvb-Tg-hVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1287" y="985"/>
+            <point key="canvasLocation" x="1459" y="1281"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="FSG-Ce-tOt"/>
+        <segue reference="H4M-Pm-Hcn"/>
+    </inferredMetricsTieBreakers>
 </document>
