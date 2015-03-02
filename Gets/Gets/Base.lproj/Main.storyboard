@@ -252,25 +252,6 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0VH-EX-34q" id="8Iz-P1-h18">
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a5y-TH-p4H">
-                                            <rect key="frame" x="8" y="6" width="175" height="80"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjZ-Jm-ewt">
-                                            <rect key="frame" x="290" y="35" width="94" height="22"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="a5y-TH-p4H" firstAttribute="top" secondItem="8Iz-P1-h18" secondAttribute="topMargin" constant="-2" id="3gm-n4-Wft"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="qjZ-Jm-ewt" secondAttribute="trailing" constant="241" id="8QZ-RH-tNb"/>
-                                        <constraint firstItem="qjZ-Jm-ewt" firstAttribute="top" secondItem="8Iz-P1-h18" secondAttribute="topMargin" id="Knk-dL-3I5"/>
-                                        <constraint firstItem="a5y-TH-p4H" firstAttribute="bottom" secondItem="8Iz-P1-h18" secondAttribute="bottomMargin" id="P6P-RH-DbV"/>
-                                        <constraint firstItem="qjZ-Jm-ewt" firstAttribute="leading" secondItem="a5y-TH-p4H" secondAttribute="trailing" constant="122" id="anF-i3-vYa"/>
-                                        <constraint firstItem="a5y-TH-p4H" firstAttribute="leading" secondItem="8Iz-P1-h18" secondAttribute="leadingMargin" id="pPi-A2-azl"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -282,7 +263,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3QY-ws-NDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1475" y="278"/>
+            <point key="canvasLocation" x="1474.5" y="277.5"/>
         </scene>
         <!--Cadastro View-->
         <scene sceneID="whf-BL-jPI">
