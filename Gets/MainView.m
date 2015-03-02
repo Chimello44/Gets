@@ -31,7 +31,7 @@ MKCoordinateRegion region;
     }
     
     [locationManager startUpdatingLocation];
-    
+    [locationManager stopUpdatingLocation];
     _mainMap.showsUserLocation = YES;
     
     
@@ -56,9 +56,7 @@ MKCoordinateRegion region;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)ondeEstou:(id)sender{
-    [_mainMap setRegion:region animated:YES];
-}
+
 /*
 #pragma mark - Navigation
 
@@ -69,4 +67,8 @@ MKCoordinateRegion region;
 }
 */
 
+- (IBAction)refresh:(id)sender {
+    [locationManager startUpdatingLocation];
+    [_mainMap setRegion:region animated:YES];
+}
 @end

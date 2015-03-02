@@ -16,6 +16,7 @@
 }
 @property (weak, nonatomic) IBOutlet MKMapView *mainMap;
 @property(retain) CLLocationManager *locationManager;
-@property (weak, nonatomic) IBOutlet UIButton *ondeEstou;
+- (IBAction)refresh:(id)sender;
+
 
 @end
