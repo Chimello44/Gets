@@ -20,9 +20,9 @@
 @property NSMutableArray *favoriteSpots;
 
 +(instancetype)singleton;
--(void)siteSort;
+-(void)siteSort:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
 -(void)insertSite:(Site *) newSite;
--(void)deleteSite;
+-(void)deleteSite:(NSInteger)siteIndex;
 -(Site *)showSites;
 
 @end
