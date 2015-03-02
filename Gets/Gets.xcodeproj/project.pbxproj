@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		E884861F1AA4D20F00546EA2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E884861E1AA4D20F00546EA2 /* main.m */; };
 		E88486221AA4D20F00546EA2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E88486211AA4D20F00546EA2 /* AppDelegate.m */; };
-		E88486251AA4D20F00546EA2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E88486241AA4D20F00546EA2 /* ViewController.m */; };
 		E88486281AA4D20F00546EA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E88486261AA4D20F00546EA2 /* Main.storyboard */; };
 		E884862A1AA4D20F00546EA2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E88486291AA4D20F00546EA2 /* Images.xcassets */; };
 		E884862D1AA4D20F00546EA2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E884862B1AA4D20F00546EA2 /* LaunchScreen.xib */; };
 		E88486391AA4D20F00546EA2 /* GetsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E88486381AA4D20F00546EA2 /* GetsTests.m */; };
+		E88486441AA4D36E00546EA2 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = E88486431AA4D36E00546EA2 /* MainView.m */; };
+		E88486471AA4D39000546EA2 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E88486461AA4D39000546EA2 /* TableViewController.m */; };
+		E884864A1AA4D3B600546EA2 /* CadastroView.m in Sources */ = {isa = PBXBuildFile; fileRef = E88486491AA4D3B600546EA2 /* CadastroView.m */; };
+		E884864D1AA4D3DD00546EA2 /* VisualizarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E884864C1AA4D3DD00546EA2 /* VisualizarView.m */; };
+		E88486501AA4D3EE00546EA2 /* AboutUsView.m in Sources */ = {isa = PBXBuildFile; fileRef = E884864F1AA4D3EE00546EA2 /* AboutUsView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +36,22 @@
 		E884861E1AA4D20F00546EA2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E88486201AA4D20F00546EA2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E88486211AA4D20F00546EA2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E88486231AA4D20F00546EA2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E88486241AA4D20F00546EA2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E88486271AA4D20F00546EA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E88486291AA4D20F00546EA2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E884862C1AA4D20F00546EA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E88486321AA4D20F00546EA2 /* GetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E88486371AA4D20F00546EA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E88486381AA4D20F00546EA2 /* GetsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetsTests.m; sourceTree = "<group>"; };
+		E88486421AA4D36E00546EA2 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainView.h; path = ../MainView.h; sourceTree = "<group>"; };
+		E88486431AA4D36E00546EA2 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainView.m; path = ../MainView.m; sourceTree = "<group>"; };
+		E88486451AA4D39000546EA2 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewController.h; path = ../TableViewController.h; sourceTree = "<group>"; };
+		E88486461AA4D39000546EA2 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewController.m; path = ../TableViewController.m; sourceTree = "<group>"; };
+		E88486481AA4D3B600546EA2 /* CadastroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CadastroView.h; path = ../CadastroView.h; sourceTree = "<group>"; };
+		E88486491AA4D3B600546EA2 /* CadastroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CadastroView.m; path = ../CadastroView.m; sourceTree = "<group>"; };
+		E884864B1AA4D3DD00546EA2 /* VisualizarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VisualizarView.h; path = ../VisualizarView.h; sourceTree = "<group>"; };
+		E884864C1AA4D3DD00546EA2 /* VisualizarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VisualizarView.m; path = ../VisualizarView.m; sourceTree = "<group>"; };
+		E884864E1AA4D3EE00546EA2 /* AboutUsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutUsView.h; path = ../AboutUsView.h; sourceTree = "<group>"; };
+		E884864F1AA4D3EE00546EA2 /* AboutUsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutUsView.m; path = ../AboutUsView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +93,18 @@
 		E884861B1AA4D20F00546EA2 /* Gets */ = {
 			isa = PBXGroup;
 			children = (
+				E884864E1AA4D3EE00546EA2 /* AboutUsView.h */,
+				E884864F1AA4D3EE00546EA2 /* AboutUsView.m */,
+				E884864B1AA4D3DD00546EA2 /* VisualizarView.h */,
+				E884864C1AA4D3DD00546EA2 /* VisualizarView.m */,
+				E88486481AA4D3B600546EA2 /* CadastroView.h */,
+				E88486491AA4D3B600546EA2 /* CadastroView.m */,
+				E88486451AA4D39000546EA2 /* TableViewController.h */,
+				E88486461AA4D39000546EA2 /* TableViewController.m */,
+				E88486421AA4D36E00546EA2 /* MainView.h */,
+				E88486431AA4D36E00546EA2 /* MainView.m */,
 				E88486201AA4D20F00546EA2 /* AppDelegate.h */,
 				E88486211AA4D20F00546EA2 /* AppDelegate.m */,
-				E88486231AA4D20F00546EA2 /* ViewController.h */,
-				E88486241AA4D20F00546EA2 /* ViewController.m */,
 				E88486261AA4D20F00546EA2 /* Main.storyboard */,
 				E88486291AA4D20F00546EA2 /* Images.xcassets */,
 				E884862B1AA4D20F00546EA2 /* LaunchScreen.xib */,
@@ -219,9 +239,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E88486251AA4D20F00546EA2 /* ViewController.m in Sources */,
+				E884864D1AA4D3DD00546EA2 /* VisualizarView.m in Sources */,
 				E88486221AA4D20F00546EA2 /* AppDelegate.m in Sources */,
+				E884864A1AA4D3B600546EA2 /* CadastroView.m in Sources */,
 				E884861F1AA4D20F00546EA2 /* main.m in Sources */,
+				E88486501AA4D3EE00546EA2 /* AboutUsView.m in Sources */,
+				E88486441AA4D36E00546EA2 /* MainView.m in Sources */,
+				E88486471AA4D39000546EA2 /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
