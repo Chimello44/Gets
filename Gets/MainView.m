@@ -13,17 +13,52 @@
 @end
 
 @implementation MainView
+@synthesize locationManager;
+MKCoordinateRegion region;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   
+    locationManager = [[CLLocationManager alloc]init];
+    
+    [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+    [locationManager setDelegate:self];
+    
+    //permissão
+    
+    if([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]){
+        [locationManager requestWhenInUseAuthorization];
+    }
+    
+    [locationManager startUpdatingLocation];
+    
+    _mainMap.showsUserLocation = YES;
+    
+    
+    
+}
+
+-(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    
+    CLLocationCoordinate2D loc=[[locations lastObject]coordinate];
+    
+    region = MKCoordinateRegionMakeWithDistance(loc,150,150);
+    NSLog(@"%@", [locations lastObject]);
+    
+    
+}
+
+-(void) locationManager:(CLLocationManager *)manager didfailWithError:(NSError *)locations{
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (IBAction)ondeEstou:(id)sender{
+    [_mainMap setRegion:region animated:YES];
+}
 /*
 #pragma mark - Navigation
 

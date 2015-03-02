@@ -18,6 +18,8 @@
 		E884864A1AA4D3B600546EA2 /* CadastroView.m in Sources */ = {isa = PBXBuildFile; fileRef = E88486491AA4D3B600546EA2 /* CadastroView.m */; };
 		E884864D1AA4D3DD00546EA2 /* VisualizarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E884864C1AA4D3DD00546EA2 /* VisualizarView.m */; };
 		E88486501AA4D3EE00546EA2 /* AboutUsView.m in Sources */ = {isa = PBXBuildFile; fileRef = E884864F1AA4D3EE00546EA2 /* AboutUsView.m */; };
+		E8D4CA271AA4E40000DF91DF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D4CA261AA4E40000DF91DF /* MapKit.framework */; };
+		E8D4CA291AA4E40900DF91DF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D4CA281AA4E40900DF91DF /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		E884864C1AA4D3DD00546EA2 /* VisualizarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VisualizarView.m; path = ../VisualizarView.m; sourceTree = "<group>"; };
 		E884864E1AA4D3EE00546EA2 /* AboutUsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutUsView.h; path = ../AboutUsView.h; sourceTree = "<group>"; };
 		E884864F1AA4D3EE00546EA2 /* AboutUsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutUsView.m; path = ../AboutUsView.m; sourceTree = "<group>"; };
+		E8D4CA261AA4E40000DF91DF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E8D4CA281AA4E40900DF91DF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8D4CA291AA4E40900DF91DF /* CoreLocation.framework in Frameworks */,
+				E8D4CA271AA4E40000DF91DF /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +81,8 @@
 		E88486101AA4D20F00546EA2 = {
 			isa = PBXGroup;
 			children = (
+				E8D4CA281AA4E40900DF91DF /* CoreLocation.framework */,
+				E8D4CA261AA4E40000DF91DF /* MapKit.framework */,
 				E884861B1AA4D20F00546EA2 /* Gets */,
 				E88486351AA4D20F00546EA2 /* GetsTests */,
 				E884861A1AA4D20F00546EA2 /* Products */,
@@ -438,6 +446,7 @@
 				E884863E1AA4D20F00546EA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E884863F1AA4D20F00546EA2 /* Build configuration list for PBXNativeTarget "GetsTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +455,7 @@
 				E88486411AA4D20F00546EA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
