@@ -1,22 +1,21 @@
 //
-//  VisualizarView.m
+//  UIToolbar.m
 //  Gets
 //
-//  Created by Hugo Luiz Chimello on 3/2/15.
+//  Created by Ezequiel de Oliveira Lima on 03/03/15.
 //  Copyright (c) 2015 Hugo Luiz Chimello. All rights reserved.
 //
 
-#import "VisualizarView.h"
+#import "UIToolbar.h"
 
-@interface VisualizarView ()
+@interface UIToolbar ()
 
 @end
 
-@implementation VisualizarView
+@implementation UIToolbar
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
+//    [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 

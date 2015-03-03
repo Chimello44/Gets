@@ -11,7 +11,6 @@
 
 @interface TableViewController : UITableViewController
 
-- (IBAction)btnGoBack:(id)sender;
 
 
 @end
