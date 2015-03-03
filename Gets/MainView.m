@@ -45,12 +45,7 @@ MKCoordinateRegion region;
     
     NSLog(@"coordenadas: %@", [locations lastObject]);
     [self foundLocation:[locations lastObject]];
-//    CLLocationCoordinate2D loc=[[locations lastObject]coordinate];
-//   
-//    region = MKCoordinateRegionMakeWithDistance(loc,250,250);
-//    [self.locationManager stopUpdatingLocation];
-//    NSLog(@"%@", [locations lastObject]);
-//    
+    
     
 }
 
@@ -81,8 +76,8 @@ MKCoordinateRegion region;
     //adiciona os dados no objeto site que implementa o protocolo <MKAnnotation> e adiciona a annotation no mapa
 
     
-    //    _site = [[Site alloc]initWithSiteName:@"mySite" andSiteInfo:@"novo local na região" andCoordinates: coord];
-    //    [_mainMap addAnnotation:_site];
+    _myAnnotation = [[Annotation alloc] initWithCoordinate:coord andTitle: @"teste"];
+    [_mainMap addAnnotation:_myAnnotation];
     
     //define a porção do mapa para mostrar
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 250, 250);

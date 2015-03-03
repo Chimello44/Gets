@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E33F93B21AA4ED2100843633 /* Site.m in Sources */ = {isa = PBXBuildFile; fileRef = E33F93B11AA4ED2100843633 /* Site.m */; };
 		E33F93B51AA4F37300843633 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = E33F93B41AA4F37300843633 /* UserData.m */; };
+		E34B52921AA63E94000305F2 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E34B52911AA63E94000305F2 /* Annotation.m */; };
 		E65591C41AA6203400F33F6F /* FavoriteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65591C31AA6203400F33F6F /* FavoriteCell.m */; };
 		E884861F1AA4D20F00546EA2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E884861E1AA4D20F00546EA2 /* main.m */; };
 		E88486221AA4D20F00546EA2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E88486211AA4D20F00546EA2 /* AppDelegate.m */; };
@@ -40,6 +41,8 @@
 		E33F93B11AA4ED2100843633 /* Site.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Site.m; sourceTree = "<group>"; };
 		E33F93B31AA4F37300843633 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		E33F93B41AA4F37300843633 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
+		E34B52901AA63E94000305F2 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
+		E34B52911AA63E94000305F2 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 		E65591C21AA6203400F33F6F /* FavoriteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteCell.h; sourceTree = "<group>"; };
 		E65591C31AA6203400F33F6F /* FavoriteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteCell.m; sourceTree = "<group>"; };
 		E88486191AA4D20F00546EA2 /* Gets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gets.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +144,8 @@
 				E884861E1AA4D20F00546EA2 /* main.m */,
 				E33F93B31AA4F37300843633 /* UserData.h */,
 				E33F93B41AA4F37300843633 /* UserData.m */,
+				E34B52901AA63E94000305F2 /* Annotation.h */,
+				E34B52911AA63E94000305F2 /* Annotation.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				E33F93B51AA4F37300843633 /* UserData.m in Sources */,
 				E88486501AA4D3EE00546EA2 /* AboutUsView.m in Sources */,
 				E33F93B21AA4ED2100843633 /* Site.m in Sources */,
+				E34B52921AA63E94000305F2 /* Annotation.m in Sources */,
 				E88486441AA4D36E00546EA2 /* MainView.m in Sources */,
 				E88486471AA4D39000546EA2 /* TableViewController.m in Sources */,
 				E65591C41AA6203400F33F6F /* FavoriteCell.m in Sources */,

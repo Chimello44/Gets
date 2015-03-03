@@ -10,12 +10,13 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "Site.h"
+#import "Annotation.h"
 
 @interface MainView : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 {
     
 }
-@property Site* site;
+@property Annotation* myAnnotation;
 @property (weak, nonatomic) IBOutlet MKMapView *mainMap;
 @property(strong, nonatomic) CLLocationManager *locationManager;
 - (IBAction)refresh:(id)sender;
