@@ -244,7 +244,7 @@
                                     <rect key="frame" x="140" y="169" width="520" height="0.0"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="96" y="187" width="227" height="30"/>
+                                    <rect key="frame" x="96" y="187" width="227" height="217"/>
                                 </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ovb-r3-YfD">
