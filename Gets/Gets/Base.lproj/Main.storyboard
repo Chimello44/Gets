@@ -156,7 +156,11 @@
                             <rect key="frame" x="155" y="0.0" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <items>
-                                <barButtonItem title="Item" width="84" id="Coh-8F-3Nk"/>
+                                <barButtonItem title="&lt; Voltar" width="84" id="Coh-8F-3Nk">
+                                    <connections>
+                                        <action selector="btnGoBack:" destination="O28-WS-VDd" id="4As-Jj-uaD"/>
+                                    </connections>
+                                </barButtonItem>
                             </items>
                         </toolbar>
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Z4B-by-2jK">
