@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -22,7 +22,9 @@
                                 <rect key="frame" x="36" y="35" width="150" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="DMF-gS-YJs"/>
+                                    <constraint firstAttribute="height" constant="50" id="DMF-gS-YJs">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" constant="150" id="F8Q-Yv-VGj"/>
                                 </constraints>
                                 <state key="normal" title="Atualizar">
@@ -31,12 +33,6 @@
                                 <connections>
                                     <action selector="refresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vDE-IF-Szy"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jet-4m-XIr">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Aonde estou?">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="z2u-wu-vex">
                                 <rect key="frame" x="36" y="95" width="528" height="361"/>
@@ -114,9 +110,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="z2u-wu-vex" secondAttribute="trailing" constant="20" id="zeE-Sg-X1s"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="jet-4m-XIr"/>
-                            </mask>
                             <mask key="constraints">
                                 <exclude reference="5Y1-Wx-NTT"/>
                                 <exclude reference="qWa-vl-Pkp"/>
@@ -130,11 +123,6 @@
                                 <include reference="3Q2-yY-3Ii"/>
                             </mask>
                         </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="jet-4m-XIr"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="mainMap" destination="z2u-wu-vex" id="nzZ-uO-cyl"/>
@@ -142,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="277"/>
+            <point key="canvasLocation" x="955.5" y="381"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="lzd-Zf-53I">
@@ -276,7 +264,7 @@
                                 <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="421" y="280" width="39" height="30"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="339" y="680" width="39" height="30"/>
                                 </variation>
                                 <connections>
@@ -300,10 +288,13 @@
                                 <state key="normal" title="Add Photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="307" y="364" width="77" height="30"/>
+                                </variation>
                                 <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="707" y="364" width="77" height="30"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="307" y="550" width="77" height="30"/>
                                 </variation>
                             </button>
@@ -312,6 +303,9 @@
                                 <state key="normal" title="Take Photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="307" y="285" width="77" height="30"/>
+                                </variation>
                                 <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="707" y="285" width="77" height="30"/>
                                 </variation>
