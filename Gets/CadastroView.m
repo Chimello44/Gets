@@ -34,4 +34,9 @@
 }
 */
 
+- (IBAction)addPhoto:(id)sender {
+}
+
+- (IBAction)takePhoto:(id)sender {
+}
 @end
