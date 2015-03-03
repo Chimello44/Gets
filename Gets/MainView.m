@@ -25,6 +25,9 @@ MKCoordinateRegion region;
         if([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]){
         [self.locationManager requestWhenInUseAuthorization];
     }
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"World_Map_1689.jpg"]];
+    
     [locationManager startUpdatingLocation];
     self.mainMap.showsUserLocation = YES;
     [super viewDidLoad];
