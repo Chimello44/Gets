@@ -17,6 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIToolbar *toolbar = [[UIToolbar alloc] init];
+    toolbar.frame = CGRectMake(0, 0, self.view.frame.size.width, 50);
+    NSMutableArray *items = [[NSMutableArray alloc] init];
+    
+    [items addObject:[[UIBarButtonItem alloc] init]];
+    
+    [toolbar setItems:items animated:NO];
+    [self.view addSubview:toolbar];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -97,7 +105,4 @@
 }
 */
 
-- (IBAction)btnGoBack:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 @end
