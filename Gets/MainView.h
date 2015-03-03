@@ -9,14 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "Site.h"
 
-@interface MainView : UIViewController <CLLocationManagerDelegate>
+@interface MainView : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 {
     
 }
+@property Site* site;
 @property (weak, nonatomic) IBOutlet MKMapView *mainMap;
-@property(retain) CLLocationManager *locationManager;
+@property(strong, nonatomic) CLLocationManager *locationManager;
 - (IBAction)refresh:(id)sender;
-
-
+-(void)locationManagerStart;
+-(void)findLocation;
+-(void)foundLocation:(CLLocation *)location;
 @end

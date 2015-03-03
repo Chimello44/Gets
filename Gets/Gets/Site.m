@@ -11,6 +11,53 @@
 
 @implementation Site
 
-@synthesize siteName, infoSite, photoSite, coordinates;
+
+
+
+-(id)initWithSiteName:(NSString *)nameSite andSiteInfo:(NSString *)infoSite
+{
+    if(self = [super init])
+    {
+        siteName = nameSite;
+        siteInfo = infoSite;
+    }
+    return self;
+}
+
+-(id)initWithSiteName:(NSString *)nameSite andSiteInfo:(NSString *)infoSite andPhotoSite:(NSString *)photoSite
+{
+    if(self = [super init])
+    {
+        siteName = nameSite;
+        siteInfo = infoSite;
+        sitePhoto = photoSite;
+    }
+    return self;
+}
+
+
+-(id)initWithSiteName:(NSString *)nameSite andSiteInfo:(NSString *)infoSite andPhotoSite:(NSString *)photoSite andCoordinates:(CLLocationCoordinate2D )myCoordinate
+{
+    if(self = [super init])
+    {
+        siteName = nameSite;
+        siteInfo = infoSite;
+        sitePhoto = photoSite;
+        coordinates = myCoordinate;
+    }
+    return self;
+}
+
+-(id)initWithSiteName:(NSString *)nameSite andSiteInfo:(NSString *)infoSite andCoordinates:(CLLocationCoordinate2D)myCoordinate
+
+{
+    if(self = [super init])
+    {
+        siteName = nameSite;
+        siteInfo = infoSite;
+        coordinates = myCoordinate;
+    }
+    return self;
+}
 
 @end
