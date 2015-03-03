@@ -11,5 +11,6 @@
 @interface CadastroView : UIViewController
 - (IBAction)addPhoto:(id)sender;
 - (IBAction)takePhoto:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *imageSign;
 
 @end
