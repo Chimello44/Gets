@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "Site.h"
 
 @interface CadastroView : UIViewController
 - (IBAction)addPhoto:(id)sender;
 - (IBAction)takePhoto:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *imageSign;
+- (IBAction)buttonSingupPlace:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *fieldName;
+@property (weak, nonatomic) IBOutlet UITextField *fieldDescription;
 
 @end

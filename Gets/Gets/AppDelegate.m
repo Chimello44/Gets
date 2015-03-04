@@ -14,9 +14,12 @@
 
 @implementation AppDelegate
 
+@synthesize user;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    user = [UserData singleton];
     return YES;
 }
 

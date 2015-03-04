@@ -10,4 +10,8 @@
 
 @interface FavoriteCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *labelTitlePlace;
+@property (weak, nonatomic) IBOutlet UIImageView *imagePhotoPlace;
+
+
 @end
