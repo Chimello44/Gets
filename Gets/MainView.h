@@ -23,4 +23,5 @@
 -(void)locationManagerStart;
 -(void)findLocation;
 -(void)foundLocation:(CLLocation *)location;
+-(void)drawRouteOnMap:(CLLocation *)sourceSite destination:(Site *)destinationSite;
 @end

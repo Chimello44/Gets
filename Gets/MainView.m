@@ -49,6 +49,10 @@ MKCoordinateRegion region;
     NSLog(@"coordenadas: %@", [locations lastObject]);
     [self foundLocation:[locations lastObject]];
     
+    Site *siteAux = [[Site alloc]initWithSiteName:@"Local teste" andCoordinates:CLLocationCoordinate2DMake(-23.547913, -46.650344)];
+    [self drawRouteOnMap:[locations lastObject] destination:siteAux];
+    
+    
     
 }
 
@@ -63,6 +67,7 @@ MKCoordinateRegion region;
 
 #pragma mark  - Implementacões do grupo
 
+//gera a locaização atual do usuário
 -(void) findLocation
 {
     [self.locationManager startUpdatingLocation];
@@ -79,9 +84,9 @@ MKCoordinateRegion region;
     //adiciona os dados no objeto site que implementa o protocolo <MKAnnotation> e adiciona a annotation no mapa
 
     
-    _myAnnotation = [[Annotation alloc] initWithCoordinate:coord andTitle: @"teste"];
-    [_mainMap addAnnotation:_myAnnotation];
-    
+//    _myAnnotation = [[Annotation alloc] initWithCoordinate:coord andTitle: @"teste"];
+//    [_mainMap addAnnotation:_myAnnotation];
+//    
     //define a porção do mapa para mostrar
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 250, 250);
     
@@ -91,6 +96,76 @@ MKCoordinateRegion region;
     [locationManager stopUpdatingLocation];
     
 }
+
+-(void)drawRouteOnMap:(CLLocation *)sourceSite destination:(Site *)destinationSite
+{
+    //Setting annotations from the source and destination locations
+    MKPointAnnotation *sourceAnnotation = [[MKPointAnnotation alloc]init];
+    [sourceAnnotation setTitle:@"Onde estou"];
+    [sourceAnnotation setCoordinate:[sourceSite coordinate]];
+    
+    MKPointAnnotation *destinationAnnotation = [[MKPointAnnotation alloc]init];
+    [destinationAnnotation setTitle:[destinationSite siteName]];
+    [destinationAnnotation setCoordinate:[destinationSite coordinates]];
+    
+    //setting placemark
+    MKPlacemark *sourcePlacemark = [[MKPlacemark alloc]initWithCoordinate: [sourceSite coordinate] addressDictionary:nil];
+    MKPlacemark *destinationPlacemark = [[MKPlacemark alloc]initWithCoordinate: [destinationSite coordinates] addressDictionary: nil];
+    
+    //setting MKMapItem objects.
+    MKMapItem *source = [[MKMapItem alloc]initWithPlacemark:sourcePlacemark];
+    [source setName:@"Local atual"];
+    MKMapItem *destination = [[MKMapItem alloc]initWithPlacemark:destinationPlacemark];
+    [destination setName:[destinationSite siteName]];
+    
+    //setting MKDirectionsRequest
+    MKDirectionsRequest *directionsRequest = [[MKDirectionsRequest alloc]init];
+    [directionsRequest setSource:source];
+    [directionsRequest setDestination:destination];
+    [directionsRequest setTransportType: MKDirectionsTransportTypeAny];
+    
+    // setting MKDirections
+    MKDirections *directions = [[MKDirections alloc]initWithRequest:directionsRequest];
+    
+    // Draw the lines.
+    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse * directionsResponse, NSError * error)
+          {
+              if(error)
+              {
+                  NSLog(@"\n ERROR: \n\n%@\n",[error description]);
+              }
+              else
+              {
+                  [[directionsResponse routes] enumerateObjectsUsingBlock:^(id object, NSUInteger index, BOOL * stop)
+                   {
+                       MKPolyline * partialDirectionLine = [(MKRoute *)object polyline];
+                       [[self mainMap] addOverlay:partialDirectionLine];
+                   }];
+              }
+          }];
+     }
+
+#pragma mark MKMapViewDelegate
+//setting the line
+-(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
+{
+    if([overlay isKindOfClass:[MKPolyline class]])
+    {
+        UIColor *routeLineColor;
+        CGFloat routeLineWidth;
+        MKPolylineView *partialRoutePolylineView = [[MKPolylineView alloc]initWithPolyline:(MKPolyline *) overlay];
+        
+        routeLineColor = [UIColor colorWithRed:0.000 green:0.000 blue:1.000 alpha:0.700];
+        routeLineWidth = 8;
+        [partialRoutePolylineView setStrokeColor:routeLineColor];
+        [partialRoutePolylineView setLineWidth:routeLineWidth];
+        return partialRoutePolylineView;
+    }
+    return nil;
+}
+
+     
+
 
 /*
 #pragma mark - Navigation
@@ -103,7 +178,13 @@ MKCoordinateRegion region;
 */
 
 - (IBAction)refresh:(id)sender {
-    [self.locationManager startUpdatingLocation];
-    [_mainMap setRegion:region animated:YES];
+//    [self.locationManager startUpdatingLocation];
+//    [_mainMap setRegion:region animated:YES];
+    
+    
+    Site *siteAux = [[Site alloc]initWithSiteName:@"Local teste" andCoordinates:CLLocationCoordinate2DMake(-23.547913, -46.650344)];
+    CLLocation *localTest = [[CLLocation alloc]initWithLatitude:-23.547913 longitude:-46.650344];
+    [self drawRouteOnMap:localTest destination:siteAux];
+    
 }
 @end
