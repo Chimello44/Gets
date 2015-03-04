@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "UserData.h"
+#import "AppDelegate.h"
+#import "FavoriteCell.h"
+
 
 @interface TableViewController : UITableViewController
 
-
+{
+    AppDelegate *appDeledate;
+}
 
 @end

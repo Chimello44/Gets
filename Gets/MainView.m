@@ -17,16 +17,18 @@
 MKCoordinateRegion region;
 
 - (void)viewDidLoad {
-    
-   
     [self locationManagerStart];
     
     //permissão o selector aponta para essa função requestWhenInUseAuthorization que identifica a usagem em foreground.
-        if([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]){
+    if([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]){
         [self.locationManager requestWhenInUseAuthorization];
     }
     
+//    Altera imagem de fundo da viewcontroller
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"World_Map_1689.jpg"]];
+    
+//    Cria notificação quando a aplicação entra em background.
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enteredBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
     
     [locationManager startUpdatingLocation];
     self.mainMap.showsUserLocation = YES;
@@ -41,10 +43,9 @@ MKCoordinateRegion region;
     [locationManager setDelegate: self];
 }
 
-
 //metodo que indica que uma nova location foi encontrada
 -(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-
+    
     
     NSLog(@"coordenadas: %@", [locations lastObject]);
     [self foundLocation:[locations lastObject]];
@@ -82,11 +83,11 @@ MKCoordinateRegion region;
     CLLocationCoordinate2D coord = [location coordinate];
     
     //adiciona os dados no objeto site que implementa o protocolo <MKAnnotation> e adiciona a annotation no mapa
-
     
-//    _myAnnotation = [[Annotation alloc] initWithCoordinate:coord andTitle: @"teste"];
-//    [_mainMap addAnnotation:_myAnnotation];
-//    
+    
+    //    _myAnnotation = [[Annotation alloc] initWithCoordinate:coord andTitle: @"teste"];
+    //    [_mainMap addAnnotation:_myAnnotation];
+    //
     //define a porção do mapa para mostrar
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 250, 250);
     
@@ -129,21 +130,21 @@ MKCoordinateRegion region;
     
     // Draw the lines.
     [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse * directionsResponse, NSError * error)
-          {
-              if(error)
+     {
+         if(error)
+         {
+             NSLog(@"\n ERROR: \n\n%@\n",[error description]);
+         }
+         else
+         {
+             [[directionsResponse routes] enumerateObjectsUsingBlock:^(id object, NSUInteger index, BOOL * stop)
               {
-                  NSLog(@"\n ERROR: \n\n%@\n",[error description]);
-              }
-              else
-              {
-                  [[directionsResponse routes] enumerateObjectsUsingBlock:^(id object, NSUInteger index, BOOL * stop)
-                   {
-                       MKPolyline * partialDirectionLine = [(MKRoute *)object polyline];
-                       [[self mainMap] addOverlay:partialDirectionLine];
-                   }];
-              }
-          }];
-     }
+                  MKPolyline * partialDirectionLine = [(MKRoute *)object polyline];
+                  [[self mainMap] addOverlay:partialDirectionLine];
+              }];
+         }
+     }];
+}
 
 #pragma mark MKMapViewDelegate
 //setting the line
@@ -164,22 +165,22 @@ MKCoordinateRegion region;
     return nil;
 }
 
-     
+
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (IBAction)refresh:(id)sender {
-//    [self.locationManager startUpdatingLocation];
-//    [_mainMap setRegion:region animated:YES];
+    //    [self.locationManager startUpdatingLocation];
+    //    [_mainMap setRegion:region animated:YES];
     
     
     Site *siteAux = [[Site alloc]initWithSiteName:@"Local teste" andCoordinates:CLLocationCoordinate2DMake(-23.547913, -46.650344)];

@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+// importação dos dados de usuario.
+#import "UserData.h"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (nonatomic, strong) UserData *user;
 
 @end
 

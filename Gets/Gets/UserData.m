@@ -14,11 +14,22 @@ static UserData *singleton;
 @implementation UserData
 
 @synthesize name, city, favoriteSpots;
+
 +(instancetype)singleton{
     if(singleton==nil)
         singleton=[[UserData alloc]init];
     return singleton;
 }
+
+-(id) init
+{
+    self = [super init];
+    
+    favoriteSpots = [[NSMutableArray alloc] init];
+    
+    return self;
+}
+
 -(id)initWithName:(NSString *)yourName andCity:(NSString *)myCity
 {
     if(self = [super init])
