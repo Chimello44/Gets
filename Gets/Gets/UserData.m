@@ -19,6 +19,8 @@ static UserData *singleton;
         singleton=[[UserData alloc]init];
     return singleton;
 }
+
+
 -(id)initWithName:(NSString *)yourName andCity:(NSString *)myCity
 {
     if(self = [super init])
