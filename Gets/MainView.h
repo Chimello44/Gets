@@ -20,7 +20,9 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mainMap;
 @property(strong, nonatomic) CLLocationManager *locationManager;
 - (IBAction)traceRoute:(id)sender;
-- (IBAction)refresh:(id)sender;
+
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *refresh;
 -(void)findLocation;
 -(void)foundLocation:(CLLocation *)location;
 -(void)drawRouteOnMap:(CLLocation *)sourceSite destination:(Site *)destinationSite;

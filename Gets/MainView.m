@@ -26,7 +26,7 @@ MKCoordinateRegion region;
         [self.locationManager requestWhenInUseAuthorization];
     }
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"World_Map_1689"]];
+    
     
 //    Cria notificação quando a aplicação entra em background.
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enteredBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
@@ -230,7 +230,9 @@ MKCoordinateRegion region;
     
 }
 
-- (IBAction)refresh:(id)sender {
+
+
+-(void) refresh:(id)sender{
     [self.locationManager startUpdatingLocation];
     [_mainMap setRegion:region animated:YES];
 }
