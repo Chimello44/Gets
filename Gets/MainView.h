@@ -19,7 +19,7 @@
 @property Annotation* myAnnotation;
 @property (weak, nonatomic) IBOutlet MKMapView *mainMap;
 @property(strong, nonatomic) CLLocationManager *locationManager;
-- (IBAction)traceRoute:(id)sender;
+//- (IBAction)traceRoute:(id)sender;
 
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *refresh;

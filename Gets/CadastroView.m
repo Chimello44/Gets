@@ -18,6 +18,12 @@
     [super viewDidLoad];
     [_imageSign.layer setBorderColor: [[UIColor blackColor] CGColor]];
     [_imageSign.layer setBorderWidth: 2.0];
+    [_fieldName.layer setBorderColor: [[UIColor blackColor] CGColor]];
+    [_fieldName.layer setBorderWidth: 2.0];
+    [_fieldDescription.layer setBorderColor: [[UIColor blackColor] CGColor]];
+    [_fieldDescription.layer setBorderWidth: 2.0];
+    
+
     // Do any additional setup after loading the view.
 }
 

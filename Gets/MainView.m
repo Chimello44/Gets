@@ -230,10 +230,14 @@ MKCoordinateRegion region;
     
 }
 
-
-
 -(void) refresh:(id)sender{
     [self.locationManager startUpdatingLocation];
     [_mainMap setRegion:region animated:YES];
+
 }
+
+////-(void) refresh:(id)sender{
+//    [self.locationManager startUpdatingLocation];
+//    [_mainMap setRegion:region animated:YES];
+////}
 @end
