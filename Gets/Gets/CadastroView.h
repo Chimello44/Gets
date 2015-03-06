@@ -18,5 +18,4 @@
 @property (weak, nonatomic) IBOutlet UITextField *fieldName;
 @property (weak, nonatomic) IBOutlet UITextField *fieldDescription;
 
-
 @end

@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "MainView.h"
 
 @interface VisualizarView : UIViewController
+
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@property long row;
+@property (nonatomic, strong) AppDelegate *appDelegate;
 
 @end

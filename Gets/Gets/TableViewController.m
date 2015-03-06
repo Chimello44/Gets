@@ -34,15 +34,14 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+//#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+//#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    NSLog(@"%lu aqui....", [appDeledate user].favoriteSpots.count);
     return [appDeledate.user.favoriteSpots count];
 }
 
@@ -52,10 +51,7 @@
     long row = [indexPath row];
     
     NSString *title =  [[appDeledate.user.favoriteSpots objectAtIndex:row]siteName];
-//    UserData *data = [UserData singleton];
-//    NSString *title = [[[data favoriteSpots]objectAtIndex:row]siteName];
-//    
-    cell.textLabel.text = title;
+    cell.labelTitlePlace.text = title;
     // Configure the cell...
     
     return cell;
@@ -95,14 +91,22 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"showDetails"]) {
+        VisualizarView *view = [[VisualizarView alloc] init];
+        view = segue.destinationViewController;
+        NSIndexPath *myPath = [self.tableView indexPathForSelectedRow];
+        
+        long row = [myPath row];
+        
+        view.row = row;
+    }
 }
-*/
-
 @end

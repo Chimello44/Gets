@@ -16,14 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_imageSign.layer setBorderColor: [[UIColor blackColor] CGColor]];
-    [_imageSign.layer setBorderWidth: 2.0];
-    [_fieldName.layer setBorderColor: [[UIColor blackColor] CGColor]];
-    [_fieldName.layer setBorderWidth: 2.0];
-    [_fieldDescription.layer setBorderColor: [[UIColor blackColor] CGColor]];
-    [_fieldDescription.layer setBorderWidth: 2.0];
-    
-
     // Do any additional setup after loading the view.
 }
 
@@ -45,7 +37,7 @@
 - (IBAction)addPhoto:(id)sender {
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate =  self;
+    picker.delegate = self;
     picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
@@ -88,11 +80,5 @@
     Site *newSite = [[Site alloc] initWithSiteName:self.fieldName.text andSiteInfo:self.fieldDescription.text];
     
     [appDelegate.user insertSite:newSite];
-}
-
--(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [[self fieldDescription] resignFirstResponder];
-    [[self fieldName] resignFirstResponder];
 }
 @end
