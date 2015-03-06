@@ -12,7 +12,8 @@
 
 @interface VisualizarView : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property long row;
 @property (nonatomic, strong) AppDelegate *appDelegate;
 

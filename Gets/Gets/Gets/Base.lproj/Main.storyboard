@@ -161,23 +161,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Z4B-by-2jK">
-                            <rect key="frame" x="-23" y="-15" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="back57">
-                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="FSG-Ce-tOt"/>
-                            </connections>
-                        </button>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="94" id="0VH-EX-34q" customClass="FavoriteCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0VH-EX-34q" id="8Iz-P1-h18">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Titulo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAh-ef-uvs">
+                                            <rect key="frame" x="120" y="16" width="273" height="62"/>
+                                            <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="40"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kuu-KL-wz9">
                                             <rect key="frame" x="13" y="7" width="80" height="80"/>
                                             <constraints>
@@ -185,25 +180,30 @@
                                                 <constraint firstAttribute="height" constant="80" id="wcw-P0-nz9"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAh-ef-uvs">
-                                            <rect key="frame" x="123" y="16" width="464" height="62"/>
-                                            <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="40"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="yAh-ef-uvs" secondAttribute="bottom" constant="16" id="2oq-yE-zdG"/>
                                         <constraint firstItem="kuu-KL-wz9" firstAttribute="leading" secondItem="8Iz-P1-h18" secondAttribute="leadingMargin" constant="5" id="6TC-ZX-LYd"/>
                                         <constraint firstAttribute="centerY" secondItem="kuu-KL-wz9" secondAttribute="centerY" id="N1S-2y-dRG"/>
+                                        <constraint firstItem="yAh-ef-uvs" firstAttribute="top" secondItem="8Iz-P1-h18" secondAttribute="top" constant="16" id="SCr-xa-L43"/>
+                                        <constraint firstItem="yAh-ef-uvs" firstAttribute="leading" secondItem="kuu-KL-wz9" secondAttribute="trailing" constant="27" id="UKB-Vd-ppG"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="yAh-ef-uvs" secondAttribute="trailing" constant="5" id="bDh-3U-FIu"/>
-                                        <constraint firstItem="yAh-ef-uvs" firstAttribute="leading" secondItem="kuu-KL-wz9" secondAttribute="trailing" constant="30" id="cJ4-JN-J5m"/>
+                                        <constraint firstItem="yAh-ef-uvs" firstAttribute="leading" secondItem="kuu-KL-wz9" secondAttribute="trailing" constant="8" symbolic="YES" id="cJ4-JN-J5m"/>
                                         <constraint firstAttribute="centerY" secondItem="yAh-ef-uvs" secondAttribute="centerY" id="zQA-ey-Llg"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="bDh-3U-FIu"/>
+                                            <exclude reference="cJ4-JN-J5m"/>
+                                            <exclude reference="zQA-ey-Llg"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.17254902420000001" green="0.99607849120000003" blue="0.87843143940000001" alpha="1" colorSpace="deviceRGB"/>
                                 <connections>
                                     <outlet property="imagePhotoPlace" destination="kuu-KL-wz9" id="rB7-mu-cus"/>
                                     <outlet property="labelTitlePlace" destination="yAh-ef-uvs" id="ISs-S0-brS"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="mainView" id="kZp-Vd-lys"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -888,9 +888,6 @@
                                 <state key="normal" title="Voltar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="O28-WS-VDd" kind="show" id="H4M-Pm-Hcn"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -976,6 +973,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="2yh-UX-8VA" id="xjT-2p-iZM"/>
+                        <outlet property="titleLabel" destination="Iy8-1b-UF6" id="jgt-je-883"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ofp-rg-K1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -984,7 +985,6 @@
     </scenes>
     <resources>
         <image name="add" width="27" height="27"/>
-        <image name="back57" width="64" height="64"/>
         <image name="camera" width="64" height="64"/>
         <image name="exit" width="64" height="64"/>
         <image name="favorites" width="27" height="27"/>
@@ -993,7 +993,6 @@
         <image name="ok" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lcP-Ua-n36"/>
-        <segue reference="BO5-Pu-JlR"/>
+        <segue reference="kZp-Vd-lys"/>
     </inferredMetricsTieBreakers>
 </document>

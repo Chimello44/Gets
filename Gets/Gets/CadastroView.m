@@ -82,5 +82,15 @@
     Site *newSite = [[Site alloc]initWithSiteName:[self.fieldName text] andSiteInfo:[self.fieldDescription text] andCoordinates:self.myLocation];
     
     [appDelegate.user insertSite:newSite];
+    NSLog(@"quantidade de index:%lu", appDelegate.user.favoriteSpots.count);
 }
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.fieldName resignFirstResponder];
+    [self.fieldDescription resignFirstResponder];
+
+}
+
+
 @end

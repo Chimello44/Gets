@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "Site.h"
 
-@interface CadastroView : UIViewController
+@interface CadastroView : UIViewController<UITextFieldDelegate>
 - (IBAction)addPhoto:(id)sender;
 - (IBAction)takePhoto:(id)sender;
 

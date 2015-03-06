@@ -9,13 +9,20 @@
 #import "TableViewController.h"
 
 @interface TableViewController ()
-
+{
+    UILongPressGestureRecognizer *longPressRecognizer;
+}
+-(void)manageGestureRecognizer:(UIGestureRecognizer *)sender;
 @end
+
 
 @implementation TableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    longPressRecognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(manageGestureRecognizer:)];
+    [longPressRecognizer setMinimumPressDuration:2.0];
     
     appDeledate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
@@ -47,7 +54,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FavoriteCell *cell = (FavoriteCell *)[tableView dequeueReusableCellWithIdentifier:@"itemCell" forIndexPath:indexPath];
-    
+    [cell addGestureRecognizer:longPressRecognizer];
     long row = [indexPath row];
     
     NSString *title =  [[appDeledate.user.favoriteSpots objectAtIndex:row]siteName];
@@ -108,5 +115,32 @@
         
         view.row = row;
     }
+    else if ([[segue identifier] isEqualToString:@"mainView"])
+    {
+        MainView *mainView = [[MainView alloc] init];
+        mainView = segue.destinationViewController;
+        NSIndexPath *myPath = [self.tableView indexPathForSelectedRow];
+        
+        long row = [myPath row];
+        
+        mainView.row = row;
+    
+    }
+        
+    
 }
+
+
+//manage the gestures
+-(void)manageGestureRecognizer:(UIGestureRecognizer *)sender
+{
+    if([sender isKindOfClass:[UILongPressGestureRecognizer class]])
+    {
+        if([sender state] == UIGestureRecognizerStateEnded)
+        {
+            [self performSegueWithIdentifier:@"mainView" sender:self];
+        }
+    }
+}
+
 @end

@@ -13,7 +13,7 @@
 @end
 
 @implementation MainView
-@synthesize locationManager;
+@synthesize locationManager, row, appDelegate;
 
 - (void)viewDidLoad {
     
@@ -27,6 +27,10 @@
     [_mainMap setDelegate:self];
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     
+    
+    //falta arrumar isso!
+    if([[[appDelegate user]favoriteSpots]count] > 0)
+        [self drawRouteOnMap];
     
     //permissão o selector aponta para essa função requestWhenInUseAuthorization que identifica a usagem em foreground.
     if([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]){
@@ -50,7 +54,6 @@
     NSLog(@"coordenadas: %@", [locations lastObject]);
     _myLocation = [locations lastObject];
     [self foundLocation:[locations lastObject]];
-    
 }
 
 -(void) locationManager:(CLLocationManager *)manager didfailWithError:(NSError *)locations{
@@ -145,29 +148,30 @@
 
 
 //só recebe o destino, traça a rota a partir do ponto atual.
--(void)drawRouteOnMap:(Site *)destinationSite
+-(void)drawRouteOnMap
 {
-    
-    //Setting annotations from the source and destination locations
-    CLLocationCoordinate2D coord = [_myLocation coordinate];
+    [[[[appDelegate user]favoriteSpots]objectAtIndex:row]setCoordinate:CLLocationCoordinate2DMake(-23.6080276, -46.7527555)];
+    //Setting annotations from the source and destination location
+    CLLocationCoordinate2D myCoordinate = [_myLocation coordinate];
     
     MKPointAnnotation *sourceAnnotation = [[MKPointAnnotation alloc]init];
     [sourceAnnotation setTitle:@"Localização atual"];
-    [sourceAnnotation setCoordinate: coord];
+    [sourceAnnotation setCoordinate: myCoordinate ];
     
     MKPointAnnotation *destinationAnnotation = [[MKPointAnnotation alloc]init];
-    [destinationAnnotation setTitle:[destinationSite siteName]];
-    [destinationAnnotation setCoordinate:[destinationSite coordinates]];
+    [destinationAnnotation setTitle: [[[[appDelegate user]favoriteSpots]objectAtIndex:row]siteName]];
+    [destinationAnnotation setCoordinate:[[[[appDelegate user]favoriteSpots]objectAtIndex:row]coordinates]];
     
     //setting placemark
-    MKPlacemark *sourcePlacemark = [[MKPlacemark alloc]initWithCoordinate: coord addressDictionary:nil];
-    MKPlacemark *destinationPlacemark = [[MKPlacemark alloc]initWithCoordinate: [destinationSite coordinates] addressDictionary: nil];
+    MKPlacemark *sourcePlacemark = [[MKPlacemark alloc]initWithCoordinate: myCoordinate addressDictionary:nil];
+    MKPlacemark *destinationPlacemark = [[MKPlacemark alloc]initWithCoordinate: [[[[appDelegate user]favoriteSpots]objectAtIndex:row]coordinates] addressDictionary:nil];
     
     //setting MKMapItem objects.
     MKMapItem *source = [[MKMapItem alloc]initWithPlacemark:sourcePlacemark];
     [source setName:@"Local atual"];
+    
     MKMapItem *destination = [[MKMapItem alloc]initWithPlacemark:destinationPlacemark];
-    [destination setName:[destinationSite siteName]];
+    [destination setName:[[[[appDelegate user]favoriteSpots]objectAtIndex:row]siteName]];
     
     //setting MKDirectionsRequest
     MKDirectionsRequest *directionsRequest = [[MKDirectionsRequest alloc]init];

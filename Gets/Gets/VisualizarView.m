@@ -24,7 +24,8 @@
     
     _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
-    self.labelTitle.text = [[_appDelegate.user.favoriteSpots objectAtIndex:row] siteName];
+    self.titleLabel.text = [[_appDelegate.user.favoriteSpots objectAtIndex:row] siteName];
+     self.descriptionLabel.text = [[_appDelegate.user.favoriteSpots objectAtIndex:row] siteInfo];
     // Do any additional setup after loading the view.
 }
 

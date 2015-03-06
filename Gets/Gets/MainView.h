@@ -15,9 +15,9 @@
 #import "CadastroView.h"
 
 @interface MainView : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
-{
-    AppDelegate *appDelegate;
-}
+
+@property AppDelegate *appDelegate;
+@property long row;
 @property Annotation* myAnnotation;
 @property (weak, nonatomic) IBOutlet MKMapView *mainMap;
 @property(strong, nonatomic) CLLocationManager *locationManager;
@@ -27,6 +27,6 @@
 -(void)findLocation;
 -(void)foundLocation:(CLLocation *)location;
 -(void)drawRouteOnMap:(CLLocation *)sourceSite destination:(Site *)destinationSite;
--(void)drawRouteOnMap:(Site *)destinationSite;
+-(void)drawRouteOnMap;
 -(void)getLocation;
 @end

@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelTitlePlace;
 @property (weak, nonatomic) IBOutlet UIImageView *imagePhotoPlace;
 
+- (IBAction)route:(id)sender;
 
 @end
