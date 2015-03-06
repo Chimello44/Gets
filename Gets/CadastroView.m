@@ -37,7 +37,7 @@
 - (IBAction)addPhoto:(id)sender {
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
+    picker.delegate =  self;
     picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
@@ -80,5 +80,11 @@
     Site *newSite = [[Site alloc] initWithSiteName:self.fieldName.text andSiteInfo:self.fieldDescription.text];
     
     [appDelegate.user insertSite:newSite];
+}
+
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [[self fieldDescription] resignFirstResponder];
+    [[self fieldName] resignFirstResponder];
 }
 @end

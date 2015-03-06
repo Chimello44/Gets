@@ -19,9 +19,12 @@
 @property Annotation* myAnnotation;
 @property (weak, nonatomic) IBOutlet MKMapView *mainMap;
 @property(strong, nonatomic) CLLocationManager *locationManager;
+@property(readonly,nonatomic) CLLocation *myLocation;
 - (IBAction)traceRoute:(id)sender;
 - (IBAction)refresh:(id)sender;
 -(void)findLocation;
 -(void)foundLocation:(CLLocation *)location;
 -(void)drawRouteOnMap:(CLLocation *)sourceSite destination:(Site *)destinationSite;
+-(void)drawRouteOnMap:(Site *)destinationSite;
+
 @end

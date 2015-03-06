@@ -21,6 +21,14 @@ static UserData *singleton;
     return singleton;
 }
 
+-(id) init
+{
+    self = [super init];
+    
+    favoriteSpots = [[NSMutableArray alloc] init];
+    
+    return self;
+}
 
 -(id)initWithName:(NSString *)yourName andCity:(NSString *)myCity
 {
