@@ -10,6 +10,7 @@
 #import "UserData.h"
 #import "AppDelegate.h"
 #import "FavoriteCell.h"
+#import "VisualizarView.h"
 
 
 @interface TableViewController : UITableViewController
