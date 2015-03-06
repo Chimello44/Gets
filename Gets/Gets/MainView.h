@@ -11,19 +11,22 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Site.h"
 #import "Annotation.h"
+#import "AppDelegate.h"
+#import "CadastroView.h"
 
 @interface MainView : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 {
-    
+    AppDelegate *appDelegate;
 }
 @property Annotation* myAnnotation;
 @property (weak, nonatomic) IBOutlet MKMapView *mainMap;
 @property(strong, nonatomic) CLLocationManager *locationManager;
+@property(readonly,nonatomic) CLLocation *myLocation;
 //- (IBAction)traceRoute:(id)sender;
-
-
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *refresh;
+- (IBAction)refresh:(id)sender;
 -(void)findLocation;
 -(void)foundLocation:(CLLocation *)location;
 -(void)drawRouteOnMap:(CLLocation *)sourceSite destination:(Site *)destinationSite;
+-(void)drawRouteOnMap:(Site *)destinationSite;
+-(void)getLocation;
 @end
