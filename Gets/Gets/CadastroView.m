@@ -17,7 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    NSLog(@"%f asasdsad", self.myLocation.latitude);
-    // Do any additional setup after loading the view.
+    [_imageSign.layer setBorderColor: [[UIColor blackColor] CGColor]];
+    [_imageSign.layer setBorderWidth: 2.0];
 }
 
 - (void)didReceiveMemoryWarning {
