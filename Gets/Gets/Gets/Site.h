@@ -17,14 +17,9 @@
 @property (nonatomic, copy) NSString *siteInfo, *sitePhoto;
 
 -(id)initWithSiteName:(NSString *)nameSite andCoordinates:(CLLocationCoordinate2D)myCoordinate;
-
 -(id)initWithSiteName:(NSString *)nameSite andSiteInfo:(NSString *)infoSite;
-
 -(id)initWithSiteName:(NSString *)nameSite andSiteInfo:(NSString *)infoSite andPhotoSite:(NSString *)photoSite;
-
-
 -(id)initWithSiteName:(NSString *)nameSite andSiteInfo:(NSString *)infoSite andPhotoSite:(NSString *)photoSite andCoordinates:(CLLocationCoordinate2D)myCoordinate;
-
 -(id)initWithSiteName:(NSString *)nameSite andSiteInfo:(NSString *)infoSite andCoordinates:(CLLocationCoordinate2D )myCoordinate;
 
 

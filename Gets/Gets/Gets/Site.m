@@ -13,9 +13,6 @@
 
 @synthesize siteName, coordinates, sitePhoto, siteInfo;
 
-
-
-
 -(id) initWithSiteName:(NSString *)nameSite andCoordinates:(CLLocationCoordinate2D)myCoordinate
 {
     if(self = [super init])

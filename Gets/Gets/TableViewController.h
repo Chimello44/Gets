@@ -13,11 +13,13 @@
 #import "VisualizarView.h"
 #import "MainView.h"
 
-
 @interface TableViewController : UITableViewController
 {
     AppDelegate *appDeledate;
 }
+
+- (IBAction)goBack:(id)sender;
+@property long row;
 
 
 @end

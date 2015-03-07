@@ -10,14 +10,15 @@
 
 @interface UserData()
 @end
+
 static UserData *singleton;
 @implementation UserData
 
 @synthesize name, city, favoriteSpots;
 
 +(instancetype)singleton{
-    if(singleton==nil)
-        singleton=[[UserData alloc]init];
+    if(singleton == nil)
+        singleton = [[UserData alloc]init];
     return singleton;
 }
 

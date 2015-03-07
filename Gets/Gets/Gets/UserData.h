@@ -15,11 +15,11 @@
     NSMutableArray *favoriteSpots;
 }
 
++(instancetype)singleton;
+
 -(id)initWithName:(NSString *)yourName andCity:(NSString *) myCity;
 @property NSString *name, *city;
 @property NSMutableArray *favoriteSpots;
-
-+(instancetype)singleton;
 -(void)siteSort:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
 -(void)insertSite:(Site *) newSite;
 -(void)deleteSite:(NSInteger)siteIndex;

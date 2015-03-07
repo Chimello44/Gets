@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    NSLog(@"%f asasdsad", self.myLocation.latitude);
     // Do any additional setup after loading the view.
 }
 
@@ -55,8 +56,6 @@
     
 }
 
-
-
 #pragma mark - Image Picker Controller delegate methods
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
@@ -82,7 +81,7 @@
     Site *newSite = [[Site alloc]initWithSiteName:[self.fieldName text] andSiteInfo:[self.fieldDescription text] andCoordinates:self.myLocation];
     
     [appDelegate.user insertSite:newSite];
-    NSLog(@"Numbers of favorites: %lu", appDelegate.user.favoriteSpots.count);
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

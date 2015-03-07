@@ -10,7 +10,7 @@
         <!--Main View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainView" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -51,7 +51,7 @@
                                     <barButtonItem image="favorites" id="0mE-mp-VZG">
                                         <color key="tintColor" red="0.019607843829999999" green="0.0078431377190000002" blue="0.023529414089999999" alpha="1" colorSpace="deviceRGB"/>
                                         <connections>
-                                            <segue destination="O28-WS-VDd" kind="popoverPresentation" popoverAnchorBarButtonItem="0mE-mp-VZG" id="lcP-Ua-n36">
+                                            <segue destination="O28-WS-VDd" kind="popoverPresentation" identifier="viewFavorites" popoverAnchorBarButtonItem="0mE-mp-VZG" id="lcP-Ua-n36">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
@@ -161,6 +161,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="evH-6J-u09">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GsT-Rs-x62">
+                                    <rect key="frame" x="277" y="7" width="46" height="30"/>
+                                    <state key="normal" backgroundImage="back57">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="goBack:" destination="O28-WS-VDd" eventType="touchUpInside" id="kOl-na-81p"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="centerY" secondItem="GsT-Rs-x62" secondAttribute="centerY" id="K3h-Qc-jbu"/>
+                                <constraint firstAttribute="centerX" secondItem="GsT-Rs-x62" secondAttribute="centerX" id="xcR-cR-It4"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="94" id="0VH-EX-34q" customClass="FavoriteCell">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -985,6 +1005,7 @@
     </scenes>
     <resources>
         <image name="add" width="27" height="27"/>
+        <image name="back57" width="64" height="64"/>
         <image name="camera" width="64" height="64"/>
         <image name="exit" width="64" height="64"/>
         <image name="favorites" width="27" height="27"/>

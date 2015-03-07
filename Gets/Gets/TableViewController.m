@@ -19,6 +19,7 @@
 
 
 @implementation TableViewController
+@synthesize row;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,7 +58,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FavoriteCell *cell = (FavoriteCell *)[tableView dequeueReusableCellWithIdentifier:@"itemCell" forIndexPath:indexPath];
     [cell addGestureRecognizer:longPressRecognizer];
-    long row = [indexPath row];
+    row = [indexPath row];
     
     NSString *title =  [[appDeledate.user.favoriteSpots objectAtIndex:row]siteName];
     cell.labelTitlePlace.text = title;
@@ -113,7 +114,7 @@
         view = segue.destinationViewController;
         NSIndexPath *myPath = [self.tableView indexPathForSelectedRow];
         
-        long row = [myPath row];
+        row = [myPath row];
         
         view.row = row;
     }
@@ -144,16 +145,19 @@
         if([sender state] == UIGestureRecognizerStateEnded)
         {
 //            [self performSegueWithIdentifier:@"mainView" sender:self];
-            MainView *mainView = [[MainView alloc] init];
 
-            NSIndexPath *myPath = [self.tableView indexPathForSelectedRow];
-            long row = [myPath row];
+            MainView *main = [[MainView alloc] init];
             
-            mainView.row = row;
-//            Sai da tableViewController
-            [self dismissViewControllerAnimated:YES completion:nil];
+            main = [self.storyboard instantiateViewControllerWithIdentifier:@"mainView"];
+            NSLog(@"%lu minha row", row);
+            main.row = row;
+            //            Sai da tableViewController
+            [self presentViewController:main animated:YES completion:nil];
         }
     }
 }
 
+- (IBAction)goBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
