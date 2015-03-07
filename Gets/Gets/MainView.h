@@ -17,7 +17,7 @@
 @interface MainView : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 
 @property AppDelegate *appDelegate;
-@property long row;
+@property (nonatomic) long row;
 @property Annotation* myAnnotation;
 @property (weak, nonatomic) IBOutlet MKMapView *mainMap;
 @property(strong, nonatomic) CLLocationManager *locationManager;
@@ -28,5 +28,5 @@
 -(void)foundLocation:(CLLocation *)location;
 -(void)drawRouteOnMap:(CLLocation *)sourceSite destination:(Site *)destinationSite;
 -(void)drawRouteOnMap;
--(void)getLocation;
+//-(void)getLocation;
 @end

@@ -11,10 +11,10 @@
 #import "AppDelegate.h"
 #import "FavoriteCell.h"
 #import "VisualizarView.h"
+#import "MainView.h"
 
 
 @interface TableViewController : UITableViewController
-
 {
     AppDelegate *appDeledate;
 }

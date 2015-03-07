@@ -29,9 +29,8 @@
     
     
     //falta arrumar isso!
-    if([[[appDelegate user]favoriteSpots]count] > 0)
-        [self drawRouteOnMap];
-    
+//    if([[[appDelegate user]favoriteSpots]count] > 0)
+//        [self drawRouteOnMap];
     //permissão o selector aponta para essa função requestWhenInUseAuthorization que identifica a usagem em foreground.
     if([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]){
         [self.locationManager requestWhenInUseAuthorization];
@@ -219,7 +218,11 @@
 //}
 
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"sadasdasd %lu", self.row);
 
+}
 
 #pragma mark MKMapViewDelegate
 ////setting the line

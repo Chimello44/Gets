@@ -10,6 +10,4 @@
 
 @interface AboutUsView : UIViewController
 
-- (IBAction)btnGoBack:(id)sender;
-
 @end

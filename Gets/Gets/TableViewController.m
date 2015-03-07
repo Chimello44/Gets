@@ -12,7 +12,9 @@
 {
     UILongPressGestureRecognizer *longPressRecognizer;
 }
+
 -(void)manageGestureRecognizer:(UIGestureRecognizer *)sender;
+
 @end
 
 
@@ -115,18 +117,21 @@
         
         view.row = row;
     }
-    else if ([[segue identifier] isEqualToString:@"mainView"])
-    {
-        MainView *mainView = [[MainView alloc] init];
-        mainView = segue.destinationViewController;
-        NSIndexPath *myPath = [self.tableView indexPathForSelectedRow];
-        
-        long row = [myPath row];
-        
-        mainView.row = row;
+    /***************************
+     Não é necessário, eu uso o self.dismissViewControllerAnimated que retorna para a página incial.
+//    else if ([[segue identifier] isEqualToString:@"mainView"])
+//    {
+//        MainView *mainView = [[MainView alloc] init];
+//        mainView = segue.destinationViewController;
+//        NSIndexPath *myPath = [self.tableView indexPathForSelectedRow];
+//        
+//        long row = [myPath row];
+//        
+//        mainView.row = row;
+//    
+//    }
+     ****************************/
     
-    }
-        
     
 }
 
@@ -138,7 +143,15 @@
     {
         if([sender state] == UIGestureRecognizerStateEnded)
         {
-            [self performSegueWithIdentifier:@"mainView" sender:self];
+//            [self performSegueWithIdentifier:@"mainView" sender:self];
+            MainView *mainView = [[MainView alloc] init];
+
+            NSIndexPath *myPath = [self.tableView indexPathForSelectedRow];
+            long row = [myPath row];
+            
+            mainView.row = row;
+//            Sai da tableViewController
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
     }
 }

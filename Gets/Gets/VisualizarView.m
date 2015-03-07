@@ -26,6 +26,7 @@
 
     self.titleLabel.text = [[_appDelegate.user.favoriteSpots objectAtIndex:row] siteName];
      self.descriptionLabel.text = [[_appDelegate.user.favoriteSpots objectAtIndex:row] siteInfo];
+    NSLog(@"OLHA AQUI %f", [[_appDelegate.user.favoriteSpots objectAtIndex:row] coordinates].latitude);
     // Do any additional setup after loading the view.
 }
 
@@ -40,14 +41,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
-    if ([[segue identifier] isEqualToString:@"traceRoute"]) {
-//        MainView *gotoMain = [[MainView alloc] init];
-//        
-//        gotoMain.row = self.row;
-//        gotoMain = segue.destinationViewController;
-
-    }
+/*****************************
+//    if ([[segue identifier] isEqualToString:@"traceRoute"]) {
+////        MainView *gotoMain = [[MainView alloc] init];
+////        
+////        gotoMain.row = self.row;
+////        gotoMain = segue.destinationViewController;
+//
+//    }
+ *****************************/
 }
 
 @end
