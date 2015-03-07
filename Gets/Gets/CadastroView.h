@@ -15,6 +15,7 @@
 - (IBAction)takePhoto:(id)sender;
 
 @property CLLocationCoordinate2D myLocation;
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageSign;
 - (IBAction)buttonSingupPlace:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *fieldName;

@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
 //    NSLog(@"%f asasdsad", self.myLocation.latitude);
     [_imageSign.layer setBorderColor: [[UIColor blackColor] CGColor]];
     [_imageSign.layer setBorderWidth: 2.0];
@@ -63,7 +64,8 @@
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.imageSign.image = chosenImage;
-    
+    //imagem salvando com esse UIImageWreiteTosavedPhotosAlbum
+    UIImageWriteToSavedPhotosAlbum(chosenImage, nil, nil, nil);
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
 }
