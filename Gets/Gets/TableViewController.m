@@ -8,17 +8,20 @@
 
 #import "TableViewController.h"
 
+
 @interface TableViewController ()
 {
     UILongPressGestureRecognizer *longPressRecognizer;
     NSNotificationCenter *notificationCenter;
 }
+
 -(void)manageGestureRecognizer:(UIGestureRecognizer *)sender;
+
 @end
 
 
-
 @implementation TableViewController
+@synthesize row;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,13 +60,47 @@
     return [appDeledate.user.favoriteSpots count];
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FavoriteCell *cell = (FavoriteCell *)[tableView dequeueReusableCellWithIdentifier:@"itemCell" forIndexPath:indexPath];
     [cell addGestureRecognizer:longPressRecognizer];
-    long row = [indexPath row];
+    row = [indexPath row];
+
+    ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset)
+    {
+        ALAssetRepresentation *rep = [myasset defaultRepresentation];
+        CGImageRef iref = [rep fullResolutionImage];
+        if (iref) {
+            UIImage *largeimage = [UIImage imageWithCGImage:iref];
+            cell.imagePhotoPlace.image = largeimage;
+        }
+    };
+    
+    ALAssetsLibraryAccessFailureBlock failureblock  = ^(NSError *myerror)
+    {
+        NSLog(@"Can't get image - %@",[myerror localizedDescription]);
+    };
+    
+    NSURL *myURL = [[NSURL alloc] init];
+
+    myURL = [[appDeledate.user.favoriteSpots objectAtIndex:row] sitePhoto];
+    
+    ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
+     [assetslibrary assetForURL:myURL
+                    resultBlock:resultblock
+                   failureBlock:failureblock];
     
     NSString *title =  [[appDeledate.user.favoriteSpots objectAtIndex:row]siteName];
     cell.labelTitlePlace.text = title;
+    
+//    [cell.imagePhotoPlace setImage:[UIImage imageWithData:myURL]];
+    
+    
+    
+//    cell.imagePhotoPlace.image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@", myURL]];
+    
+    NSLog(@"%@ ajkjljlksd", cell.imagePhotoPlace);
+
     // Configure the cell...
     
     return cell;
@@ -77,17 +114,17 @@
 }
 */
 
-/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        [appDeledate.user.favoriteSpots removeObjectAtIndex:[indexPath row]];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -116,7 +153,7 @@
         view = segue.destinationViewController;
         NSIndexPath *myPath = [self.tableView indexPathForSelectedRow];
         
-        long row = [myPath row];
+        row = [myPath row];
         
         view.row = row;
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -146,9 +183,21 @@
     {
         if([sender state] == UIGestureRecognizerStateEnded)
         {
-            [self performSegueWithIdentifier:@"mainView" sender:self];
+//            [self performSegueWithIdentifier:@"mainView" sender:self];
+
+            MainView *main = [[MainView alloc] init];
+            
+            main = [self.storyboard instantiateViewControllerWithIdentifier:@"mainView"];
+            NSLog(@"%lu minha row", row);
+            main.row = row;
+//                        Sai da tableViewController
+            [self presentViewController:main animated:YES completion:nil];
         }
     }
 }
 
+
+- (IBAction)goBack:(id)sender {
+        [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

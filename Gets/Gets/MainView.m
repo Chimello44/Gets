@@ -8,10 +8,6 @@
 
 #import "MainView.h"
 
-@interface MainView ()
-
-@end
-
 @implementation MainView
 @synthesize locationManager, row, appDelegate, notificationCenter, myLocation;
 
@@ -228,7 +224,10 @@
 //}
 
 
-
+-(void)viewDidAppear:(BOOL)animated
+{    
+    NSLog(@"sadasdasd %lu", self.row);
+}
 
 #pragma mark MKMapViewDelegate
 ////setting the line
@@ -261,6 +260,11 @@
  }
  */
 
+-(void)passValueOfRow:(long)myRow
+{
+    self.row = myRow;
+}
+
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([[segue identifier]isEqualToString:@"signUp"])
@@ -268,16 +272,16 @@
         //setting the location to coord
         CLLocationCoordinate2D coord = [myLocation coordinate];
         //setting the viewDestination
-        CadastroView *signUpView = [[CadastroView alloc]init];
+        CadastroView *signUpView = [segue destinationViewController];
         //setting the coordinate to the class coordinate
         signUpView.myLocation = coord;
         //dispatching to the CadastroView
-        signUpView = segue.destinationViewController;
+    }
+    if([[segue identifier]isEqualToString:@"viewFavorites"])
+    {
+        NSLog(@"aquiiiiii");
     }
 }
-
-
-
 
 @end
 

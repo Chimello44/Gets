@@ -16,7 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    NSLog(@"%f asasdsad", self.myLocation.latitude);
     // Do any additional setup after loading the view.
+    [_imageSign.layer setBorderColor: [[UIColor blackColor] CGColor]];
+    [_imageSign.layer setBorderWidth: 2.0];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,8 +58,6 @@
     
 }
 
-
-
 #pragma mark - Image Picker Controller delegate methods
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
@@ -64,32 +65,37 @@
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.imageSign.image = chosenImage;
     
+    imageSource = [info objectForKey:UIImagePickerControllerReferenceURL];
+    
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
 }
+
+
 
 - (IBAction)buttonSingupPlace:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
+//    NSLog(@"%@ UHUUU", imageSource);
+
 //    Site *newSite = [[Site alloc] initWithSiteName:self.fieldName.text andSiteInfo:self.fieldDescription.text];
-    
-    Site *newSite = [[Site alloc]initWithSiteName:[self.fieldName text] andSiteInfo:[self.fieldDescription text] andCoordinates:self.myLocation];
-    
+//    Site *newSite = [[Site alloc]initWithSiteName:[self.fieldName text] andSiteInfo:[self.fieldDescription text] andCoordinates:self.myLocation];
+
+    Site *newSite = [[Site alloc] initWithSiteName:[self.fieldName text] andSiteInfo:[self.fieldDescription text] andPhotoSite:imageSource andCoordinates:self.myLocation];
+
+//    NSLog(@"%@ uuuuu", newSite.sitePhotoSource);
+
     [appDelegate.user insertSite:newSite];
-    NSLog(@"quantidade de index:%lu", appDelegate.user.favoriteSpots.count);
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.fieldName resignFirstResponder];
     [self.fieldDescription resignFirstResponder];
-
 }
 
 

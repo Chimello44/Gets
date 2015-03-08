@@ -11,6 +11,9 @@
 #import "Site.h"
 
 @interface CadastroView : UIViewController<UITextFieldDelegate>
+{
+    NSURL *imageSource;
+}
 - (IBAction)addPhoto:(id)sender;
 - (IBAction)takePhoto:(id)sender;
 
@@ -19,5 +22,4 @@
 - (IBAction)buttonSingupPlace:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *fieldName;
 @property (weak, nonatomic) IBOutlet UITextField *fieldDescription;
-
 @end

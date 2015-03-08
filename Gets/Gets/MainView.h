@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import "Site.h"
+#import "Site.h"    
 #import "Annotation.h"
 #import "AppDelegate.h"
 #import "CadastroView.h"
@@ -17,13 +17,12 @@
 @interface MainView : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 
 @property AppDelegate *appDelegate;
-@property long row;
+@property (nonatomic) long row;
 @property Annotation* myAnnotation;
 @property NSNotificationCenter *notificationCenter;
 @property (weak, nonatomic) IBOutlet MKMapView *mainMap;
 @property(strong, nonatomic) CLLocationManager *locationManager;
 @property(readonly,nonatomic) CLLocation *myLocation;
-//- (IBAction)traceRoute:(id)sender;
 - (IBAction)refresh:(id)sender;
 -(void)findLocation;
 -(void)foundLocation:(CLLocation *)location;
