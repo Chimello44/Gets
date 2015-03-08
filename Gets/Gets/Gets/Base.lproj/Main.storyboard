@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xoG-fe-Xm7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xoG-fe-Xm7">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -348,7 +348,7 @@
                                 <connections>
                                     <outlet property="imagePhotoPlace" destination="kuu-KL-wz9" id="rB7-mu-cus"/>
                                     <outlet property="labelTitlePlace" destination="yAh-ef-uvs" id="ISs-S0-brS"/>
-                                    <segue destination="rn5-Og-4ne" kind="show" identifier="showDetails" id="aKv-zj-eYL"/>
+                                    <segue destination="rn5-Og-4ne" kind="show" identifier="showDetails" id="vQJ-qr-lpL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -376,7 +376,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="GETS" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aBf-HU-N65">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="GETS" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aBf-HU-N65">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="6Hd-Fs-T6J"/>
@@ -400,13 +400,13 @@
                                     </mask>
                                 </variation>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7YD-YK-Ep0">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7YD-YK-Ep0">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <string key="text">Gets é um aplicativo criado para o mini-challenger do MackMobile 2015. Criado pelos alunos Rafael ,Ezequiel e Hugo , esse aplicativo é um utilitario criado para facilitar a vida do usuario que queira gravar seus locais favoritos ou algum lugar novo e poder sem problemas chegar ate ele em outra hora.</string>
+                                <string key="text">Gets é um aplicativo criado para o mini-challenge #1 do MackMobile 2015. Criado pelos alunos Rafael, Ezequiel e Hugo. Esse aplicativo é um utilitario criado para facilitar a vida do usuario que queira gravar seus locais favoritos ou algum lugar novo para que possa  chegar ate ele sem problemas  em outro momento.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="GETS" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="e29-uu-G9X">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="GETS" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="e29-uu-G9X">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="127" id="SNS-kN-Ylk"/>
@@ -455,7 +455,7 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="H8e-Vj-fPT"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="GETS" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="arq-sz-xIp">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="GETS" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="arq-sz-xIp">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="YLz-p2-H5f"/>
@@ -1638,7 +1638,7 @@
         <image name="twitter" width="27" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BO5-Pu-JlR"/>
-        <segue reference="lcP-Ua-n36"/>
+        <segue reference="H8e-Vj-fPT"/>
+        <segue reference="KPJ-1V-sed"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -23,6 +23,10 @@
     [_mainMap setDelegate:self];
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     
+    //
+    
+    //
+    
     
     //permissão o selector aponta para essa função requestWhenInUseAuthorization que identifica a usagem em foreground.
     if([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]){
@@ -152,8 +156,6 @@
     if ([[sender name]isEqualToString:@"drawRouteOnMap"]);
     {
         NSLog(@"NOME: %@ ", [[[[appDelegate user]favoriteSpots]objectAtIndex:row]siteName]);
-        CLLocationDegrees latitude = -23.6080276;
-        CLLocationDegrees longitude = -46.7527555;
        
         
         //Setting annotations from the source and destination location
@@ -224,14 +226,6 @@
 //}
 
 
--(void)viewDidAppear:(BOOL)animated
-{
-    if ([appDelegate.user.favoriteSpots count] > 0) {
-        NSLog(@"%@ n", [NSNumber numberWithDouble: [[appDelegate.user.favoriteSpots objectAtIndex:row] coordinates].longitude]);
-        
-        NSLog(@"AQUI Q EU QUERO %lu", self.row);
-    }
-}
 
 #pragma mark MKMapViewDelegate
 ////setting the line

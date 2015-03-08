@@ -7,6 +7,7 @@
 //
 
 #import "TableViewController.h"
+#import "FavoriteCell.h"
 
 
 @interface TableViewController ()
@@ -27,12 +28,18 @@
     [super viewDidLoad];
     
     
+    
     notificationCenter = [NSNotificationCenter defaultCenter];
-                          
-    longPressRecognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(manageGestureRecognizer:)];
-    [longPressRecognizer setMinimumPressDuration:2.0];
     
     appDeledate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    Site *sampleSite1 = [[Site alloc]initWithSiteName:@"Shopping Paulista" andSiteInfo:@"Entretenimento" andCoordinates:CLLocationCoordinate2DMake(-23.570554, -46.643602)];
+    
+    Site *sampleSite2 = [[Site alloc]initWithSiteName:@"Parque Ibirapuera" andSiteInfo:@"Entretenimento" andCoordinates:CLLocationCoordinate2DMake(-23.587416, -46.657634)];
+    
+    [[[appDeledate user]favoriteSpots]addObject:sampleSite1];
+    [[[appDeledate user]favoriteSpots]addObject:sampleSite2];
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -63,7 +70,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FavoriteCell *cell = (FavoriteCell *)[tableView dequeueReusableCellWithIdentifier:@"itemCell" forIndexPath:indexPath];
+    
+    //setting the gestures
+    longPressRecognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(manageGestureRecognizer:)];
+    [longPressRecognizer setMinimumPressDuration:4.0];
     [cell addGestureRecognizer:longPressRecognizer];
+    
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(manageGestureRecognizer:)];
+    tapGestureRecognizer.numberOfTapsRequired = 1;
+    tapGestureRecognizer.numberOfTouchesRequired = 1;
+    [cell addGestureRecognizer:tapGestureRecognizer];
+    
+    //setting the gestures
+    
+    
     row = [indexPath row];
 
     ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset)
@@ -183,15 +203,24 @@
     {
         if([sender state] == UIGestureRecognizerStateEnded)
         {
-//            [self performSegueWithIdentifier:@"mainView" sender:self];
-
-            MainView *main = [[MainView alloc] init];
+            NSLog(@"LONGPRESS!");
+          [self performSegueWithIdentifier:@"mainView" sender:self];
             
-            main = [self.storyboard instantiateViewControllerWithIdentifier:@"mainView"];
-            NSLog(@"%lu minha row", row);
-            main.row = row;
+
+//            MainView *main = [[MainView alloc] init];
+//            
+//            main = [self.storyboard instantiateViewControllerWithIdentifier:@"mainView"];
+//            NSLog(@"%lu minha row", row);
+//            main.row = row;
 //                        Sai da tableViewController
-            [self presentViewController:main animated:YES completion:nil];
+//            [self presentViewController:main animated:YES completion:nil];
+        }
+        else if([sender isKindOfClass:[UITapGestureRecognizer class]])
+        if([sender state] == UIGestureRecognizerStateEnded)
+        {
+            NSLog(@"TAPGESTURE!");
+            [self performSegueWithIdentifier:@"showDetails" sender:self];
+            
         }
     }
 }
