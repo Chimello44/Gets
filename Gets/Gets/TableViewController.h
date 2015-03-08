@@ -18,6 +18,7 @@
 @interface TableViewController : UITableViewController
 {
     AppDelegate *appDeledate;
+    
 }
 
 - (IBAction)goBack:(id)sender;
