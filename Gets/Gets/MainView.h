@@ -27,6 +27,6 @@
 -(void)findLocation;
 -(void)foundLocation:(CLLocation *)location;
 -(void)drawRouteOnMap:(CLLocation *)sourceSite destination:(Site *)destinationSite;
--(void)drawRouteOnMap:(NSNotification *)sender;
+-(void)drawRouteOnMap;
 
 @end

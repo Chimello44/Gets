@@ -348,7 +348,7 @@
                                 <connections>
                                     <outlet property="imagePhotoPlace" destination="kuu-KL-wz9" id="rB7-mu-cus"/>
                                     <outlet property="labelTitlePlace" destination="yAh-ef-uvs" id="ISs-S0-brS"/>
-                                    <segue destination="rn5-Og-4ne" kind="show" identifier="showDetails" id="vQJ-qr-lpL"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="mainView" id="Qft-Pm-rU0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1638,7 +1638,7 @@
         <image name="twitter" width="27" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="H8e-Vj-fPT"/>
+        <segue reference="Qft-Pm-rU0"/>
         <segue reference="KPJ-1V-sed"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -73,7 +73,7 @@
     
     //setting the gestures
     longPressRecognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(manageGestureRecognizer:)];
-    [longPressRecognizer setMinimumPressDuration:4.0];
+    [longPressRecognizer setMinimumPressDuration:2.0];
     [cell addGestureRecognizer:longPressRecognizer];
     
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(manageGestureRecognizer:)];
@@ -177,7 +177,7 @@
         
         view.row = row;
         [self dismissViewControllerAnimated:YES completion:nil];
-    }
+    } //[sender identifier]
     else if ([[segue identifier] isEqualToString:@"mainView"])
     {
         MainView *mainView = [[MainView alloc] init];
@@ -216,11 +216,12 @@
 //            [self presentViewController:main animated:YES completion:nil];
         }
         else if([sender isKindOfClass:[UITapGestureRecognizer class]])
-        if([sender state] == UIGestureRecognizerStateEnded)
         {
-            NSLog(@"TAPGESTURE!");
-            [self performSegueWithIdentifier:@"showDetails" sender:self];
-            
+            if([sender state] == UIGestureRecognizerStateEnded)
+            {
+                NSLog(@"TAPGESTURE!");
+                [self performSegueWithIdentifier:@"showDetails" sender:self];
+            }
         }
     }
 }

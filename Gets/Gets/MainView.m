@@ -45,6 +45,7 @@
 {
     
     NSLog(@"entrei no willAppear");
+
     [notificationCenter addObserver:self selector:@selector(drawRouteOnMap:) name:@"drawRouteOnMap" object:nil];
 }
 
@@ -151,10 +152,11 @@
 
 
 //só recebe o destino, traça a rota a partir do ponto atual.
--(void)drawRouteOnMap:(NSNotification *)sender
+-(void)drawRouteOnMap
 {
-    if ([[sender name]isEqualToString:@"drawRouteOnMap"]);
-    {
+    NSLog(@"Entrei no drawRouteOnMap");
+
+        NSLog(@"Está rodando!");
         NSLog(@"NOME: %@ ", [[[[appDelegate user]favoriteSpots]objectAtIndex:row]siteName]);
        
         
@@ -204,7 +206,6 @@
         
         [[self mainMap]addAnnotation:sourceAnnotation];
         [[self mainMap]addAnnotation:destinationAnnotation];
-    }
 }
 
 
