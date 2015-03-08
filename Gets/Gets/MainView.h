@@ -17,7 +17,7 @@
 @interface MainView : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 
 @property AppDelegate *appDelegate;
-@property (nonatomic) long row;
+@property long row;
 @property Annotation* myAnnotation;
 @property (weak, nonatomic) IBOutlet MKMapView *mainMap;
 @property(strong, nonatomic) CLLocationManager *locationManager;

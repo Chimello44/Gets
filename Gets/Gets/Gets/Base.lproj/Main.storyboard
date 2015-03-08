@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xoG-fe-Xm7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xoG-fe-Xm7">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -52,7 +52,7 @@
                                     <barButtonItem image="add" id="8Ck-pL-RCm">
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="Gj0-hf-8rd" kind="show" id="OTU-CU-gnU"/>
+                                            <segue destination="Gj0-hf-8rd" kind="show" identifier="signUp" id="OTU-CU-gnU"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="108" style="plain" systemItem="fixedSpace" id="sgU-5D-PW4"/>
@@ -1172,7 +1172,6 @@
         <!--Visualizar View-->
         <scene sceneID="lRm-hy-dss">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ofp-rg-K1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="rn5-Og-4ne" customClass="VisualizarView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uhd-Dh-wsI"/>
@@ -1367,6 +1366,7 @@
                         <outlet property="titleLabel" destination="Iy8-1b-UF6" id="jgt-je-883"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ofp-rg-K1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1971" y="1272"/>
         </scene>
@@ -1639,6 +1639,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="BO5-Pu-JlR"/>
-        <segue reference="KPJ-1V-sed"/>
+        <segue reference="lcP-Ua-n36"/>
     </inferredMetricsTieBreakers>
 </document>

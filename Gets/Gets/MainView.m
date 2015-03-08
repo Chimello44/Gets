@@ -14,7 +14,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+        
     //SharedApplication = "singleton" do appDelegate.
     appDelegate = (AppDelegate *) [[UIApplication sharedApplication]delegate];
     locationManager = [[CLLocationManager alloc]init];
@@ -215,8 +215,12 @@
 
 
 -(void)viewDidAppear:(BOOL)animated
-{    
-    NSLog(@"sadasdasd %lu", self.row);
+{
+    if ([appDelegate.user.favoriteSpots count] > 0) {
+        NSLog(@"%@ n", [NSNumber numberWithDouble: [[appDelegate.user.favoriteSpots objectAtIndex:row] coordinates].longitude]);
+        
+        NSLog(@"AQUI Q EU QUERO %lu", self.row);
+    }
 }
 
 #pragma mark MKMapViewDelegate
