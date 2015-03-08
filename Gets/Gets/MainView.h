@@ -19,6 +19,7 @@
 @property AppDelegate *appDelegate;
 @property long row;
 @property Annotation* myAnnotation;
+@property NSNotificationCenter *notificationCenter;
 @property (weak, nonatomic) IBOutlet MKMapView *mainMap;
 @property(strong, nonatomic) CLLocationManager *locationManager;
 @property(readonly,nonatomic) CLLocation *myLocation;
@@ -27,6 +28,6 @@
 -(void)findLocation;
 -(void)foundLocation:(CLLocation *)location;
 -(void)drawRouteOnMap:(CLLocation *)sourceSite destination:(Site *)destinationSite;
--(void)drawRouteOnMap;
--(void)getLocation;
+-(void)drawRouteOnMap:(NSNotification *)sender;
+
 @end

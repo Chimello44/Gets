@@ -11,9 +11,11 @@
 @interface TableViewController ()
 {
     UILongPressGestureRecognizer *longPressRecognizer;
+    NSNotificationCenter *notificationCenter;
 }
 -(void)manageGestureRecognizer:(UIGestureRecognizer *)sender;
 @end
+
 
 
 @implementation TableViewController
@@ -21,6 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    notificationCenter = [NSNotificationCenter defaultCenter];
+                          
     longPressRecognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(manageGestureRecognizer:)];
     [longPressRecognizer setMinimumPressDuration:2.0];
     
@@ -94,7 +99,7 @@
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    return YES;    
 }
 */
 
@@ -114,6 +119,7 @@
         long row = [myPath row];
         
         view.row = row;
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
     else if ([[segue identifier] isEqualToString:@"mainView"])
     {
@@ -124,7 +130,9 @@
         long row = [myPath row];
         
         mainView.row = row;
-    
+        [notificationCenter postNotificationName:@"drawRouteOnMap" object:self];
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
     }
         
     

@@ -13,24 +13,20 @@
 @end
 
 @implementation MainView
-@synthesize locationManager, row, appDelegate;
+@synthesize locationManager, row, appDelegate, notificationCenter, myLocation;
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    notificationCenter = [NSNotificationCenter defaultCenter];
     //SharedApplication = "singleton" do appDelegate.
     appDelegate = (AppDelegate *) [[UIApplication sharedApplication]delegate];
     locationManager = [[CLLocationManager alloc]init];
-    _myLocation = [[CLLocation alloc]init];
+    myLocation = [[CLLocation alloc]init];
     [locationManager setDelegate:self];
     [_mainMap setDelegate:self];
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     
-    
-    //falta arrumar isso!
-    if([[[appDelegate user]favoriteSpots]count] > 0)
-        [self drawRouteOnMap];
     
     //permissão o selector aponta para essa função requestWhenInUseAuthorization que identifica a usagem em foreground.
     if([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]){
@@ -45,6 +41,13 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    NSLog(@"entrei no willAppear");
+    [notificationCenter addObserver:self selector:@selector(drawRouteOnMap:) name:@"drawRouteOnMap" object:nil];
+}
+
 //metodo de inicialização da instancia de locationManager da classe CLLocationManager
 
 //metodo que indica que uma nova location foi encontrada
@@ -52,7 +55,7 @@
     
     NSLog(@"entrei no didUpdateLocations");
     NSLog(@"coordenadas: %@", [locations lastObject]);
-    _myLocation = [locations lastObject];
+    myLocation = [locations lastObject];
     [self foundLocation:[locations lastObject]];
 }
 
@@ -148,56 +151,62 @@
 
 
 //só recebe o destino, traça a rota a partir do ponto atual.
--(void)drawRouteOnMap
+-(void)drawRouteOnMap:(NSNotification *)sender
 {
-    [[[[appDelegate user]favoriteSpots]objectAtIndex:row]setCoordinate:CLLocationCoordinate2DMake(-23.6080276, -46.7527555)];
-    //Setting annotations from the source and destination location
-    CLLocationCoordinate2D myCoordinate = [_myLocation coordinate];
-    
-    MKPointAnnotation *sourceAnnotation = [[MKPointAnnotation alloc]init];
-    [sourceAnnotation setTitle:@"Localização atual"];
-    [sourceAnnotation setCoordinate: myCoordinate ];
-    
-    MKPointAnnotation *destinationAnnotation = [[MKPointAnnotation alloc]init];
-    [destinationAnnotation setTitle: [[[[appDelegate user]favoriteSpots]objectAtIndex:row]siteName]];
-    [destinationAnnotation setCoordinate:[[[[appDelegate user]favoriteSpots]objectAtIndex:row]coordinates]];
-    
-    //setting placemark
-    MKPlacemark *sourcePlacemark = [[MKPlacemark alloc]initWithCoordinate: myCoordinate addressDictionary:nil];
-    MKPlacemark *destinationPlacemark = [[MKPlacemark alloc]initWithCoordinate: [[[[appDelegate user]favoriteSpots]objectAtIndex:row]coordinates] addressDictionary:nil];
-    
-    //setting MKMapItem objects.
-    MKMapItem *source = [[MKMapItem alloc]initWithPlacemark:sourcePlacemark];
-    [source setName:@"Local atual"];
-    
-    MKMapItem *destination = [[MKMapItem alloc]initWithPlacemark:destinationPlacemark];
-    [destination setName:[[[[appDelegate user]favoriteSpots]objectAtIndex:row]siteName]];
-    
-    //setting MKDirectionsRequest
-    MKDirectionsRequest *directionsRequest = [[MKDirectionsRequest alloc]init];
-    [directionsRequest setSource:source];
-    [directionsRequest setDestination:destination];
-    [directionsRequest setTransportType: MKDirectionsTransportTypeAny];
-    
-    // setting MKDirections
-    MKDirections *directions = [[MKDirections alloc]initWithRequest:directionsRequest];
-    
-    // Draw the lines.
-    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse * directionsResponse, NSError * error)
-     {
-         NSLog(@"deveria desenhar");
-         [[directionsResponse routes] enumerateObjectsUsingBlock:^(id object, NSUInteger index, BOOL * stop)
-          {
-              MKPolyline * partialDirectionLine = [(MKRoute *)object polyline];
-              [[self mainMap] addOverlay:partialDirectionLine];
-              
-          }];
-         
-     }];
-    
-    [[self mainMap]addAnnotation:sourceAnnotation];
-    [[self mainMap]addAnnotation:destinationAnnotation];
-    
+    if ([[sender name]isEqualToString:@"drawRouteOnMap"]);
+    {
+        NSLog(@"NOME: %@ ", [[[[appDelegate user]favoriteSpots]objectAtIndex:row]siteName]);
+        CLLocationDegrees latitude = -23.6080276;
+        CLLocationDegrees longitude = -46.7527555;
+       
+        
+        //Setting annotations from the source and destination location
+        CLLocationCoordinate2D myCoordinate = [myLocation coordinate];
+        
+        MKPointAnnotation *sourceAnnotation = [[MKPointAnnotation alloc]init];
+        [sourceAnnotation setTitle:@"Localização atual"];
+        [sourceAnnotation setCoordinate: myCoordinate ];
+        
+        MKPointAnnotation *destinationAnnotation = [[MKPointAnnotation alloc]init];
+        [destinationAnnotation setTitle: [[[[appDelegate user]favoriteSpots]objectAtIndex:row]siteName]];
+        [destinationAnnotation setCoordinate:[[[[appDelegate user]favoriteSpots]objectAtIndex:row]coordinates]];
+        
+        //setting placemark
+        MKPlacemark *sourcePlacemark = [[MKPlacemark alloc]initWithCoordinate: myCoordinate addressDictionary:nil];
+        MKPlacemark *destinationPlacemark = [[MKPlacemark alloc]initWithCoordinate: [[[[appDelegate user]favoriteSpots]objectAtIndex:row]coordinates] addressDictionary:nil];
+        
+        //setting MKMapItem objects.
+        MKMapItem *source = [[MKMapItem alloc]initWithPlacemark:sourcePlacemark];
+        [source setName:@"Local atual"];
+        
+        MKMapItem *destination = [[MKMapItem alloc]initWithPlacemark:destinationPlacemark];
+        [destination setName:[[[[appDelegate user]favoriteSpots]objectAtIndex:row]siteName]];
+        
+        //setting MKDirectionsRequest
+        MKDirectionsRequest *directionsRequest = [[MKDirectionsRequest alloc]init];
+        [directionsRequest setSource:source];
+        [directionsRequest setDestination:destination];
+        [directionsRequest setTransportType: MKDirectionsTransportTypeAny];
+        
+        // setting MKDirections
+        MKDirections *directions = [[MKDirections alloc]initWithRequest:directionsRequest];
+        
+        // Draw the lines.
+        [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse * directionsResponse, NSError * error)
+         {
+             NSLog(@"deveria desenhar");
+             [[directionsResponse routes] enumerateObjectsUsingBlock:^(id object, NSUInteger index, BOOL * stop)
+              {
+                  MKPolyline * partialDirectionLine = [(MKRoute *)object polyline];
+                  [[self mainMap] addOverlay:partialDirectionLine];
+                  
+              }];
+             
+         }];
+        
+        [[self mainMap]addAnnotation:sourceAnnotation];
+        [[self mainMap]addAnnotation:destinationAnnotation];
+    }
 }
 
 
@@ -257,7 +266,7 @@
     if([[segue identifier]isEqualToString:@"signUp"])
     {
         //setting the location to coord
-        CLLocationCoordinate2D coord = [_myLocation coordinate];
+        CLLocationCoordinate2D coord = [myLocation coordinate];
         //setting the viewDestination
         CadastroView *signUpView = [[CadastroView alloc]init];
         //setting the coordinate to the class coordinate

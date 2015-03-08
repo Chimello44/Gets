@@ -17,6 +17,7 @@
 
 {
     AppDelegate *appDeledate;
+    
 }
 
 

@@ -28,7 +28,7 @@
                                 </items>
                                 <color key="barTintColor" red="0.17254902420000001" green="0.99607849120000003" blue="0.87843143940000001" alpha="1" colorSpace="deviceRGB"/>
                             </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QWh-hL-std">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWh-hL-std">
                                 <rect key="frame" x="16" y="469" width="584" height="44"/>
                                 <items>
                                     <barButtonItem image="location" id="7kX-xb-wqt">
@@ -59,7 +59,7 @@
                                 </items>
                                 <color key="barTintColor" red="0.17254902420000001" green="0.99607849120000003" blue="0.87843143940000001" alpha="1" colorSpace="deviceRGB"/>
                             </toolbar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="z2u-wu-vex">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="z2u-wu-vex">
                                 <rect key="frame" x="135" y="105" width="366" height="271"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="375" id="6Ix-tp-iPd"/>
