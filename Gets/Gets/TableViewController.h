@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+
 #import "UserData.h"
 #import "AppDelegate.h"
 #import "FavoriteCell.h"

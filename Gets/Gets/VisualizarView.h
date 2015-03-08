@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property long row;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 
 @property (nonatomic, strong) AppDelegate *appDelegate;

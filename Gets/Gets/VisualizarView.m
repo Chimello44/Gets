@@ -15,7 +15,7 @@
 
 @implementation VisualizarView
 
-@synthesize row;
+@synthesize row, imageView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,6 +26,31 @@
 
     self.titleLabel.text = [[_appDelegate.user.favoriteSpots objectAtIndex:row] siteName];
      self.descriptionLabel.text = [[_appDelegate.user.favoriteSpots objectAtIndex:row] siteInfo];
+    
+    ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset)
+    {
+        ALAssetRepresentation *rep = [myasset defaultRepresentation];
+        CGImageRef iref = [rep fullResolutionImage];
+        if (iref) {
+            UIImage *largeimage = [UIImage imageWithCGImage:iref];
+            self.imageView.image = largeimage;
+        }
+    };
+    
+    ALAssetsLibraryAccessFailureBlock failureblock  = ^(NSError *myerror)
+    {
+        NSLog(@"Can't get image - %@",[myerror localizedDescription]);
+    };
+    
+    NSURL *myURL = [[NSURL alloc] init];
+    
+    myURL = [[_appDelegate.user.favoriteSpots objectAtIndex:row] sitePhoto];
+    
+    ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
+    [assetslibrary assetForURL:myURL
+                   resultBlock:resultblock
+                  failureBlock:failureblock];
+    
     NSLog(@"OLHA AQUI %f", [[_appDelegate.user.favoriteSpots objectAtIndex:row] coordinates].latitude);
     // Do any additional setup after loading the view.
 }

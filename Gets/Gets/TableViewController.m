@@ -8,6 +8,7 @@
 
 #import "TableViewController.h"
 
+
 @interface TableViewController ()
 {
     UILongPressGestureRecognizer *longPressRecognizer;
@@ -16,7 +17,6 @@
 -(void)manageGestureRecognizer:(UIGestureRecognizer *)sender;
 
 @end
-
 
 @implementation TableViewController
 @synthesize row;
@@ -55,13 +55,47 @@
     return [appDeledate.user.favoriteSpots count];
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FavoriteCell *cell = (FavoriteCell *)[tableView dequeueReusableCellWithIdentifier:@"itemCell" forIndexPath:indexPath];
     [cell addGestureRecognizer:longPressRecognizer];
     row = [indexPath row];
+
+    ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset)
+    {
+        ALAssetRepresentation *rep = [myasset defaultRepresentation];
+        CGImageRef iref = [rep fullResolutionImage];
+        if (iref) {
+            UIImage *largeimage = [UIImage imageWithCGImage:iref];
+            cell.imagePhotoPlace.image = largeimage;
+        }
+    };
+    
+    ALAssetsLibraryAccessFailureBlock failureblock  = ^(NSError *myerror)
+    {
+        NSLog(@"Can't get image - %@",[myerror localizedDescription]);
+    };
+    
+    NSURL *myURL = [[NSURL alloc] init];
+
+    myURL = [[appDeledate.user.favoriteSpots objectAtIndex:row] sitePhoto];
+    
+    ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
+     [assetslibrary assetForURL:myURL
+                    resultBlock:resultblock
+                   failureBlock:failureblock];
     
     NSString *title =  [[appDeledate.user.favoriteSpots objectAtIndex:row]siteName];
     cell.labelTitlePlace.text = title;
+    
+//    [cell.imagePhotoPlace setImage:[UIImage imageWithData:myURL]];
+    
+    
+    
+//    cell.imagePhotoPlace.image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@", myURL]];
+    
+    NSLog(@"%@ ajkjljlksd", cell.imagePhotoPlace);
+
     // Configure the cell...
     
     return cell;
@@ -151,7 +185,7 @@
             main = [self.storyboard instantiateViewControllerWithIdentifier:@"mainView"];
             NSLog(@"%lu minha row", row);
             main.row = row;
-            //            Sai da tableViewController
+//                        Sai da tableViewController
             [self presentViewController:main animated:YES completion:nil];
         }
     }

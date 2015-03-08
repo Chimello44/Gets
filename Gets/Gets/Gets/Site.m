@@ -33,7 +33,7 @@
     return self;
 }
 
--(id)initWithSiteName:(NSString *)nameSite andSiteInfo:(NSString *)infoSite andPhotoSite:(NSString *)photoSite
+-(id)initWithSiteName:(NSString *)nameSite andSiteInfo:(NSString *)infoSite andPhotoSite:(NSURL *)photoSite
 {
     if(self = [super init])
     {
@@ -45,7 +45,7 @@
 }
 
 
--(id)initWithSiteName:(NSString *)nameSite andSiteInfo:(NSString *)infoSite andPhotoSite:(NSString *)photoSite andCoordinates:(CLLocationCoordinate2D )myCoordinate
+-(id)initWithSiteName:(NSString *)nameSite andSiteInfo:(NSString *)infoSite andPhotoSite:(NSURL *)photoSite andCoordinates:(CLLocationCoordinate2D )myCoordinate
 {
     if(self = [super init])
     {

@@ -16,10 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 //    NSLog(@"%f asasdsad", self.myLocation.latitude);
-    [_imageSign.layer setBorderColor: [[UIColor blackColor] CGColor]];
-    [_imageSign.layer setBorderWidth: 2.0];
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,25 +62,30 @@
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.imageSign.image = chosenImage;
-    //imagem salvando com esse UIImageWreiteTosavedPhotosAlbum
-    UIImageWriteToSavedPhotosAlbum(chosenImage, nil, nil, nil);
+    
+    imageSource = [info objectForKey:UIImagePickerControllerReferenceURL];
+    
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
 }
+
+
 
 - (IBAction)buttonSingupPlace:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
+//    NSLog(@"%@ UHUUU", imageSource);
+
 //    Site *newSite = [[Site alloc] initWithSiteName:self.fieldName.text andSiteInfo:self.fieldDescription.text];
-    
-    Site *newSite = [[Site alloc]initWithSiteName:[self.fieldName text] andSiteInfo:[self.fieldDescription text] andCoordinates:self.myLocation];
-    
+//    Site *newSite = [[Site alloc]initWithSiteName:[self.fieldName text] andSiteInfo:[self.fieldDescription text] andCoordinates:self.myLocation];
+
+    Site *newSite = [[Site alloc] initWithSiteName:[self.fieldName text] andSiteInfo:[self.fieldDescription text] andPhotoSite:imageSource andCoordinates:self.myLocation];
+
+//    NSLog(@"%@ uuuuu", newSite.sitePhotoSource);
+
     [appDelegate.user insertSite:newSite];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -91,7 +94,6 @@
 {
     [self.fieldName resignFirstResponder];
     [self.fieldDescription resignFirstResponder];
-
 }
 
 
