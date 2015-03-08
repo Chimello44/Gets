@@ -25,6 +25,10 @@
                                     <barButtonItem systemItem="organize" id="cQd-yT-Wy3">
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="LUE-3b-7DE"/>
+                                    <barButtonItem image="face" id="fRm-3h-b69"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="IDv-We-s8k"/>
+                                    <barButtonItem image="twitter" id="Gzf-pK-fev"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="vld-fY-Tmu"/>
                                     <barButtonItem image="info28" id="e6H-I4-jQB">
                                         <connections>
@@ -48,13 +52,10 @@
                                     <barButtonItem image="add" id="8Ck-pL-RCm">
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="Gj0-hf-8rd" kind="show" identifier="signUp" id="jff-ri-eMC"/>
+                                            <segue destination="Gj0-hf-8rd" kind="show" id="OTU-CU-gnU"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem id="NHX-77-hgD">
-                                        <color key="tintColor" red="0.16078431900000001" green="0.99215692280000001" blue="0.22352942819999999" alpha="1" colorSpace="deviceRGB"/>
-                                    </barButtonItem>
-                                    <barButtonItem width="93" style="plain" systemItem="fixedSpace" id="sgU-5D-PW4"/>
+                                    <barButtonItem width="108" style="plain" systemItem="fixedSpace" id="sgU-5D-PW4"/>
                                     <barButtonItem image="favorites" id="0mE-mp-VZG">
                                         <color key="tintColor" red="0.019607843829999999" green="0.0078431377190000002" blue="0.023529414089999999" alpha="1" colorSpace="deviceRGB"/>
                                         <connections>
@@ -342,6 +343,10 @@
                                             <exclude reference="lev-Zn-8qw"/>
                                             <exclude reference="oUj-Bn-kxF"/>
                                             <exclude reference="yQS-3s-RpR"/>
+                                            <exclude reference="BgN-6i-o1r"/>
+                                            <exclude reference="F6h-2b-puO"/>
+                                            <exclude reference="y1b-Bb-i38"/>
+                                            <exclude reference="ygf-gZ-iaK"/>
                                             <exclude reference="7fv-JZ-Odc"/>
                                             <exclude reference="Uht-mQ-fgJ"/>
                                             <exclude reference="bDh-3U-FIu"/>
@@ -350,10 +355,6 @@
                                             <exclude reference="fuq-8M-JRu"/>
                                             <exclude reference="go7-CK-p9g"/>
                                             <exclude reference="zQA-ey-Llg"/>
-                                            <exclude reference="BgN-6i-o1r"/>
-                                            <exclude reference="F6h-2b-puO"/>
-                                            <exclude reference="y1b-Bb-i38"/>
-                                            <exclude reference="ygf-gZ-iaK"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
@@ -368,6 +369,10 @@
                                             <exclude reference="lev-Zn-8qw"/>
                                             <include reference="oUj-Bn-kxF"/>
                                             <exclude reference="yQS-3s-RpR"/>
+                                            <include reference="BgN-6i-o1r"/>
+                                            <include reference="F6h-2b-puO"/>
+                                            <include reference="y1b-Bb-i38"/>
+                                            <include reference="ygf-gZ-iaK"/>
                                             <exclude reference="2oq-yE-zdG"/>
                                             <include reference="7fv-JZ-Odc"/>
                                             <exclude reference="SCr-xa-L43"/>
@@ -376,10 +381,6 @@
                                             <exclude reference="ePL-CO-Cno"/>
                                             <include reference="fuq-8M-JRu"/>
                                             <exclude reference="go7-CK-p9g"/>
-                                            <include reference="BgN-6i-o1r"/>
-                                            <include reference="F6h-2b-puO"/>
-                                            <include reference="y1b-Bb-i38"/>
-                                            <include reference="ygf-gZ-iaK"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -412,6 +413,7 @@
                         <viewControllerLayoutGuide type="bottom" id="UV8-QC-GJj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="L4H-jA-3QY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="GETS" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aBf-HU-N65">
@@ -548,20 +550,20 @@
                                 <exclude reference="arq-sz-xIp"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="FMx-ZL-Ge6"/>
-                                <exclude reference="JLz-aD-74i"/>
-                                <exclude reference="aMA-Sa-DyF"/>
-                                <exclude reference="fFa-kd-iyM"/>
-                                <exclude reference="Ane-DP-Afz"/>
-                                <exclude reference="uRE-76-Uk6"/>
-                                <exclude reference="z2z-uc-lx6"/>
+                                <exclude reference="GxZ-j1-J4C"/>
+                                <exclude reference="g8f-kB-vRq"/>
                                 <exclude reference="CPc-9i-C4B"/>
                                 <exclude reference="LlN-5i-jTX"/>
                                 <exclude reference="Xvf-rZ-ikx"/>
                                 <exclude reference="ZYl-lc-IAN"/>
                                 <exclude reference="uq2-6y-Cfa"/>
-                                <exclude reference="g8f-kB-vRq"/>
-                                <exclude reference="GxZ-j1-J4C"/>
+                                <exclude reference="FMx-ZL-Ge6"/>
+                                <exclude reference="JLz-aD-74i"/>
+                                <exclude reference="aMA-Sa-DyF"/>
+                                <exclude reference="fFa-kd-iyM"/>
+                                <exclude reference="z2z-uc-lx6"/>
+                                <exclude reference="Ane-DP-Afz"/>
+                                <exclude reference="uRE-76-Uk6"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -573,20 +575,20 @@
                                 <include reference="arq-sz-xIp"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="FMx-ZL-Ge6"/>
-                                <include reference="JLz-aD-74i"/>
-                                <include reference="aMA-Sa-DyF"/>
-                                <include reference="fFa-kd-iyM"/>
-                                <include reference="Ane-DP-Afz"/>
-                                <include reference="uRE-76-Uk6"/>
-                                <include reference="z2z-uc-lx6"/>
+                                <include reference="GxZ-j1-J4C"/>
+                                <include reference="g8f-kB-vRq"/>
                                 <include reference="CPc-9i-C4B"/>
                                 <include reference="LlN-5i-jTX"/>
                                 <include reference="Xvf-rZ-ikx"/>
                                 <include reference="ZYl-lc-IAN"/>
                                 <include reference="uq2-6y-Cfa"/>
-                                <include reference="g8f-kB-vRq"/>
-                                <include reference="GxZ-j1-J4C"/>
+                                <include reference="FMx-ZL-Ge6"/>
+                                <include reference="JLz-aD-74i"/>
+                                <include reference="aMA-Sa-DyF"/>
+                                <include reference="fFa-kd-iyM"/>
+                                <include reference="z2z-uc-lx6"/>
+                                <include reference="Ane-DP-Afz"/>
+                                <include reference="uRE-76-Uk6"/>
                             </mask>
                         </variation>
                     </view>
@@ -1205,7 +1207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2oe-FR-1Op" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1119" y="1272"/>
+            <point key="canvasLocation" x="1146" y="1427"/>
         </scene>
         <!--Visualizar View-->
         <scene sceneID="lRm-hy-dss">
@@ -1661,6 +1663,7 @@
         <image name="add" width="27" height="27"/>
         <image name="camera" width="64" height="64"/>
         <image name="exit" width="64" height="64"/>
+        <image name="face" width="27" height="27"/>
         <image name="favorites" width="27" height="27"/>
         <image name="gallery" width="64" height="64"/>
         <image name="info28" width="27" height="27"/>
@@ -1672,9 +1675,10 @@
         <image name="pointer16" width="27" height="27"/>
         <image name="right" width="128" height="128"/>
         <image name="tablet2" width="256" height="256"/>
+        <image name="twitter" width="27" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="H8e-Vj-fPT"/>
-        <segue reference="KPJ-1V-sed"/>
+        <segue reference="lcP-Ua-n36"/>
+        <segue reference="BO5-Pu-JlR"/>
     </inferredMetricsTieBreakers>
 </document>
