@@ -14,6 +14,7 @@
     // Initialization code
     [_imagePhotoPlace.layer setBorderColor: [[UIColor blackColor] CGColor]];
     [_imagePhotoPlace.layer setBorderWidth: 2.0];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
