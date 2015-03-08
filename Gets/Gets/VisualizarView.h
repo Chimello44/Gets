@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 
+
 @property (nonatomic, strong) AppDelegate *appDelegate;
 
 @end
