@@ -21,6 +21,7 @@
 }
 
 - (IBAction)goBack:(id)sender;
+
 @property long row;
 
 
