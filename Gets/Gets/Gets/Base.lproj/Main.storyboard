@@ -48,7 +48,7 @@
                                     </barButtonItem>
                                 </items>
                                 <color key="tintColor" red="0.019607843829999999" green="0.0078431377190000002" blue="0.023529414089999999" alpha="1" colorSpace="deviceRGB"/>
-                                <color key="barTintColor" red="0.27058824896812439" green="0.61176472902297974" blue="0.78039216995239258" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.13725490200000001" green="0.72156862749999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QWh-hL-std">
                                 <rect key="frame" x="16" y="469" width="584" height="44"/>
@@ -76,7 +76,7 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" red="0.27058824896812439" green="0.61176472902297974" blue="0.78039216995239258" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.13725490200000001" green="0.72156862749999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="z2u-wu-vex">
                                 <rect key="frame" x="135" y="105" width="366" height="271"/>
@@ -357,7 +357,7 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.27058824896812439" green="0.61176472902297974" blue="0.78039216995239258" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.13725490200000001" green="0.72156862749999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="imagePhotoPlace" destination="kuu-KL-wz9" id="rB7-mu-cus"/>
                                     <outlet property="labelTitlePlace" destination="yAh-ef-uvs" id="ISs-S0-brS"/>
@@ -413,7 +413,7 @@
                                     </mask>
                                 </variation>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7YD-YK-Ep0">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="7YD-YK-Ep0">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <string key="text">Gets é um aplicativo criado para o mini-challenge #1 do MackMobile 2015. Criado pelos alunos Rafael, Ezequiel e Hugo. Esse aplicativo é um utilitario criado para facilitar a vida do usuario que queira gravar seus locais favoritos ou algum lugar novo para que possa  chegar ate ele sem problemas  em outro momento.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -496,7 +496,7 @@
                                 </variation>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.270588249" green="0.61176472900000001" blue="0.78039217000000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.72156862749999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.019607843829999999" green="0.0078431377190000002" blue="0.023529414089999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="e29-uu-G9X" firstAttribute="trailing" secondItem="aBf-HU-N65" secondAttribute="trailing" id="Ane-DP-Afz"/>
@@ -922,7 +922,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.27058824896812439" green="0.61176472902297974" blue="0.78039216995239258" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.72156862749999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Xpi-5T-4xi" firstAttribute="leading" secondItem="Y07-Hf-4HF" secondAttribute="leading" id="0bz-rF-k6S"/>
                             <constraint firstItem="Ily-Ui-55v" firstAttribute="leading" secondItem="NLu-89-XoV" secondAttribute="leadingMargin" constant="92" id="1Zh-vm-Fib"/>
@@ -1296,7 +1296,7 @@
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.270588249" green="0.61176472900000001" blue="0.78039217000000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.72156862749999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="c0M-pf-sTK" firstAttribute="centerX" secondItem="4CT-kv-efm" secondAttribute="centerX" id="3eC-sh-6dv"/>
                             <constraint firstItem="Iy8-1b-UF6" firstAttribute="leading" secondItem="gpM-vC-Xrm" secondAttribute="leadingMargin" constant="206" id="70j-uJ-uv2"/>
@@ -1543,7 +1543,7 @@
                                 </variation>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.27058823529999998" green="0.61176470589999998" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.12941176470588237" green="0.77254901960784317" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="DEx-me-KeF" firstAttribute="leading" secondItem="COe-ke-cAk" secondAttribute="trailing" constant="16" id="0wA-Xp-mvL"/>
                             <constraint firstItem="oJ9-OS-UkO" firstAttribute="centerX" secondItem="cRx-G8-oVi" secondAttribute="centerX" id="6j5-9L-xwJ"/>
@@ -1648,6 +1648,6 @@
         <image name="twitter" width="27" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="U1P-e3-kSW"/>
+        <segue reference="H8e-Vj-fPT"/>
     </inferredMetricsTieBreakers>
 </document>
