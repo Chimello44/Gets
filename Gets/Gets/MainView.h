@@ -9,13 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <iAd/iAd.h>
+
 #import "Site.h"    
 #import "Annotation.h"
 #import "AppDelegate.h"
 #import "CadastroView.h"
 
-@interface MainView : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
-
+@interface MainView : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, ADBannerViewDelegate>
+{
+    BOOL bannerIsVisible;
+}
 @property AppDelegate *appDelegate;
 @property long row;
 @property Annotation* myAnnotation;
@@ -26,6 +30,7 @@
 - (IBAction)refresh:(id)sender;
 -(void)findLocation;
 -(void)foundLocation:(CLLocation *)location;
+@property (weak, nonatomic) IBOutlet ADBannerView *ads;
 
 -(void)drawRouteOnMap:(CLLocation *)sourceSite destination:(Site *)destinationSite;
 

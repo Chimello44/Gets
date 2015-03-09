@@ -32,7 +32,9 @@
         [self.locationManager requestWhenInUseAuthorization];
     }
     
-    
+    ADBannerView *adView = [[ADBannerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, 320, 40)];
+    [self.view addSubview:adView];
+    _ads.delegate = self;
     
     [locationManager startUpdatingLocation];
     
@@ -40,12 +42,33 @@
     
 }
 
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    if (!bannerIsVisible)
+    {
+        // If banner isn't part of view hierarchy, add it
+        if (_ads.superview == nil)
+        {
+            [self.view addSubview:_ads];
+        }
+        
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+        
+        // Assumes the banner view is just off the bottom of the screen.
+        banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
+        
+        [UIView commitAnimations];
+        
+        bannerIsVisible = YES;
+    }
+}
+
 -(void)viewWillAppear:(BOOL)animated
 {
     
     NSLog(@"entrei no willAppear");
 
-    [notificationCenter addObserver:self selector:@selector(drawRouteOnMap:) name:@"drawRouteOnMap" object:nil];
+//    [notificationCenter addObserver:self selector:@selector(drawRouteOnMap:) name:@"drawRouteOnMap" object:nil];
     
     if ([appDelegate.user.favoriteSpots count] > 0) {
         NSLog(@"Há mais de 0 items salvos...");
