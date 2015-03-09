@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <iAd/iAd.h>
+#import <Social/Social.h>
 
 #import "Site.h"    
 #import "Annotation.h"
@@ -20,6 +21,9 @@
 {
     BOOL bannerIsVisible;
 }
+- (IBAction)twiTer:(id)sender;
+
+- (IBAction)faceBook:(id)sender;
 - (IBAction)showLocal:(id)sender;
 @property AppDelegate *appDelegate;
 @property long row;

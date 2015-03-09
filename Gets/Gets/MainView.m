@@ -315,6 +315,49 @@
     }
 }
 
+- (IBAction)twiTer:(id)sender {
+    
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
+        NSLog(@"Esta Logado!");
+        
+        SLComposeViewController *post;
+        
+        post=[SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        [post setInitialText:@"Escontrei um lugar bacana " "digite o nome do lugar"];
+        
+        [self presentViewController:post animated:YES completion:nil];
+}
+    else{
+        UIAlertView *error =[[UIAlertView alloc]initWithTitle:@"Erro" message:@"Voce não esta conectado ao twitter, por favor conecte-se e tente novamente" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+        
+        [error show];
+    }
+}
+
+- (IBAction)faceBook:(id)sender {
+    
+    
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]){
+        NSLog(@"Esta Logado!");
+        
+        SLComposeViewController *post;
+        
+        post=[SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        [post setInitialText:@"Escontrei um lugar bacana " "digite o nome do lugar"];
+        
+        [self presentViewController:post animated:YES completion:nil];
+        
+        
+    }
+    else{
+        UIAlertView *error =[[UIAlertView alloc]initWithTitle:@"Erro" message:@"Voce não esta conectado ao facebook, por favor conecte-se e tente novamente" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+        
+        [error show];
+    }
+}
+
 - (IBAction)showLocal:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Você esta indo para..." message:[[appDelegate.user.favoriteSpots objectAtIndex:row] siteName] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
     
