@@ -26,7 +26,9 @@
 - (IBAction)refresh:(id)sender;
 -(void)findLocation;
 -(void)foundLocation:(CLLocation *)location;
+
 -(void)drawRouteOnMap:(CLLocation *)sourceSite destination:(Site *)destinationSite;
+
 -(void)drawRouteOnMap;
 
 @end

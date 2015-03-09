@@ -24,7 +24,6 @@
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     
     //
-    
     //
     
     
@@ -47,6 +46,12 @@
     NSLog(@"entrei no willAppear");
 
     [notificationCenter addObserver:self selector:@selector(drawRouteOnMap:) name:@"drawRouteOnMap" object:nil];
+    
+    if ([appDelegate.user.favoriteSpots count] > 0) {
+        NSLog(@"Há mais de 0 items salvos...");
+        
+        [self drawRouteOnMap];
+    }
 }
 
 //metodo de inicialização da instancia de locationManager da classe CLLocationManager
@@ -109,6 +114,7 @@
     MKPointAnnotation *sourceAnnotation = [[MKPointAnnotation alloc]init];
     [sourceAnnotation setTitle:@"Onde estou"];
     [sourceAnnotation setCoordinate:[sourceSite coordinate]];
+    
     
     MKPointAnnotation *destinationAnnotation = [[MKPointAnnotation alloc]init];
     [destinationAnnotation setTitle:[destinationSite siteName]];
