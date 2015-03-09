@@ -24,6 +24,9 @@
                                 <items>
                                     <barButtonItem systemItem="organize" id="cQd-yT-Wy3">
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="showLocal:" destination="BYZ-38-t0r" id="ZEa-yC-izu"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="LUE-3b-7DE"/>
                                     <barButtonItem image="face" id="fRm-3h-b69"/>
@@ -80,13 +83,9 @@
                                     </mask>
                                 </variation>
                             </mapView>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Z0p-Yw-d0q">
-                                <rect key="frame" x="16" y="568" width="480" height="32"/>
-                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Z0p-Yw-d0q" secondAttribute="bottom" id="2nP-S0-aPi"/>
                             <constraint firstItem="z2u-wu-vex" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="5Y1-Wx-NTT"/>
                             <constraint firstItem="QWh-hL-std" firstAttribute="top" secondItem="z2u-wu-vex" secondAttribute="bottom" constant="93" id="7OZ-I8-5Lb"/>
                             <constraint firstItem="QWh-hL-std" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="90P-OF-q59"/>
@@ -99,7 +98,6 @@
                             <constraint firstItem="PVy-4G-7Km" firstAttribute="leading" secondItem="QWh-hL-std" secondAttribute="leading" id="WcA-gf-htm"/>
                             <constraint firstItem="QWh-hL-std" firstAttribute="top" secondItem="z2u-wu-vex" secondAttribute="bottom" id="Yrw-10-ySd"/>
                             <constraint firstItem="QWh-hL-std" firstAttribute="trailing" secondItem="PVy-4G-7Km" secondAttribute="trailing" id="Z7V-7D-RTK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Z0p-Yw-d0q" secondAttribute="trailing" id="bkl-JI-Sgy"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QWh-hL-std" secondAttribute="bottom" constant="57" id="dfC-vM-ft7"/>
                             <constraint firstItem="z2u-wu-vex" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="drb-Vr-DVE"/>
                             <constraint firstItem="z2u-wu-vex" firstAttribute="top" secondItem="PVy-4G-7Km" secondAttribute="bottom" id="gcD-EH-xEc"/>
@@ -111,7 +109,6 @@
                             <constraint firstItem="z2u-wu-vex" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="20" id="qWa-vl-Pkp"/>
                             <constraint firstItem="z2u-wu-vex" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-24" id="rJA-og-26z"/>
                             <constraint firstItem="PVy-4G-7Km" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="sHN-V1-53K"/>
-                            <constraint firstItem="Z0p-Yw-d0q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="tFP-gH-u41"/>
                             <constraint firstItem="PVy-4G-7Km" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yAD-D6-5ee"/>
                             <constraint firstAttribute="trailing" secondItem="QWh-hL-std" secondAttribute="trailing" id="yzN-Tg-AR1"/>
                         </constraints>
@@ -160,13 +157,12 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="ads" destination="Z0p-Yw-d0q" id="uFI-AU-NgH"/>
                         <outlet property="mainMap" destination="z2u-wu-vex" id="4yX-ro-iMZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1011" y="438.75"/>
+            <point key="canvasLocation" x="1011" y="438"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="lzd-Zf-53I">
@@ -177,15 +173,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="evH-6J-u09">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="116" width="600" height="55"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GsT-Rs-x62">
-                                    <rect key="frame" x="277" y="7" width="46" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GsT-Rs-x62">
+                                    <rect key="frame" x="275" y="2.5" width="50" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="53" id="G1J-NX-PiR"/>
+                                        <constraint firstAttribute="width" constant="50" id="NJF-FU-nWN"/>
                                         <constraint firstAttribute="height" constant="53" id="Pgl-n1-eH4"/>
                                         <constraint firstAttribute="height" constant="44" id="iJt-xH-dlo"/>
+                                        <constraint firstAttribute="height" constant="50" id="iZW-Ju-ll4"/>
                                         <constraint firstAttribute="width" constant="44" id="rkQ-Qx-lbf"/>
                                     </constraints>
                                     <state key="normal" image="left">
@@ -355,7 +353,7 @@
                                 <connections>
                                     <outlet property="imagePhotoPlace" destination="kuu-KL-wz9" id="rB7-mu-cus"/>
                                     <outlet property="labelTitlePlace" destination="yAh-ef-uvs" id="ISs-S0-brS"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="mainView" id="Qft-Pm-rU0"/>
+                                    <segue destination="rn5-Og-4ne" kind="show" identifier="showDetails" id="unB-LI-gQ8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -863,7 +861,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="BO5-Pu-JlR"/>
+                                    <action selector="buttonGoBack:" destination="Gj0-hf-8rd" eventType="touchUpInside" id="Gjp-x5-bbM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ovb-r3-YfD">
@@ -1228,9 +1226,6 @@
                                         <include reference="H9V-HK-FMj"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <segue destination="O28-WS-VDd" kind="show" id="KPJ-1V-sed"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DescriçãoView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yh-UX-8VA">
                                 <rect key="frame" x="244" y="196" width="113" height="21"/>
@@ -1646,6 +1641,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="U1P-e3-kSW"/>
-        <segue reference="lcP-Ua-n36"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -21,5 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageSign;
 - (IBAction)buttonSingupPlace:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *fieldName;
+- (IBAction)buttonGoBack:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *fieldDescription;
 @end

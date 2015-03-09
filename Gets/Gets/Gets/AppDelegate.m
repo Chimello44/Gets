@@ -19,6 +19,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     user = [UserData singleton];
+    
+    Site *sampleSite1 = [[Site alloc]initWithSiteName:@"Shopping Paulista" andSiteInfo:@"Entretenimento" andCoordinates:CLLocationCoordinate2DMake(-23.570554, -46.643602)];
+    
+    Site *sampleSite2 = [[Site alloc]initWithSiteName:@"Parque Ibirapuera" andSiteInfo:@"Entretenimento" andCoordinates:CLLocationCoordinate2DMake(-23.587416, -46.657634)];
+    
+    [[[self user]favoriteSpots]addObject:sampleSite1];
+    [[[self user]favoriteSpots]addObject:sampleSite2];
+    
     return YES;
 }
 

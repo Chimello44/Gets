@@ -20,6 +20,7 @@
 {
     BOOL bannerIsVisible;
 }
+- (IBAction)showLocal:(id)sender;
 @property AppDelegate *appDelegate;
 @property long row;
 @property Annotation* myAnnotation;

@@ -98,5 +98,7 @@
     [self.fieldDescription resignFirstResponder];
 }
 
-
+- (IBAction)buttonGoBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

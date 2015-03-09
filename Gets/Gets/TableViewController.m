@@ -33,13 +33,6 @@
     
     appDeledate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    Site *sampleSite1 = [[Site alloc]initWithSiteName:@"Shopping Paulista" andSiteInfo:@"Entretenimento" andCoordinates:CLLocationCoordinate2DMake(-23.570554, -46.643602)];
-    
-    Site *sampleSite2 = [[Site alloc]initWithSiteName:@"Parque Ibirapuera" andSiteInfo:@"Entretenimento" andCoordinates:CLLocationCoordinate2DMake(-23.587416, -46.657634)];
-    
-    [[[appDeledate user]favoriteSpots]addObject:sampleSite1];
-    [[[appDeledate user]favoriteSpots]addObject:sampleSite2];
-    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -56,13 +49,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Potentially incomplete method implementation.
+    //#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete method implementation.
+    //#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [appDeledate.user.favoriteSpots count];
 }
@@ -85,7 +78,7 @@
     
     
     row = [indexPath row];
-
+    
     ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset)
     {
         ALAssetRepresentation *rep = [myasset defaultRepresentation];
@@ -102,37 +95,37 @@
     };
     
     NSURL *myURL = [[NSURL alloc] init];
-
+    
     myURL = [[appDeledate.user.favoriteSpots objectAtIndex:row] sitePhoto];
     
     ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
-     [assetslibrary assetForURL:myURL
-                    resultBlock:resultblock
-                   failureBlock:failureblock];
+    [assetslibrary assetForURL:myURL
+                   resultBlock:resultblock
+                  failureBlock:failureblock];
     
     NSString *title =  [[appDeledate.user.favoriteSpots objectAtIndex:row]siteName];
     cell.labelTitlePlace.text = title;
     
-//    [cell.imagePhotoPlace setImage:[UIImage imageWithData:myURL]];
+    //    [cell.imagePhotoPlace setImage:[UIImage imageWithData:myURL]];
     
     
     
-//    cell.imagePhotoPlace.image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@", myURL]];
+    //    cell.imagePhotoPlace.image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@", myURL]];
     
     NSLog(@"%@ ajkjljlksd", cell.imagePhotoPlace);
-
+    
     // Configure the cell...
     
     return cell;
 }
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -142,23 +135,23 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
 
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;    
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 
 #pragma mark - Navigation
@@ -177,57 +170,79 @@
         
         view.row = row;
         [self dismissViewControllerAnimated:YES completion:nil];
+
+        view = [self.storyboard instantiateViewControllerWithIdentifier:@"showDetails"];
+
     } //[sender identifier]
     else if ([[segue identifier] isEqualToString:@"mainView"])
     {
-        MainView *mainView = [[MainView alloc] init];
+        MainView *mainView = [segue destinationViewController];
         mainView = segue.destinationViewController;
         NSIndexPath *myPath = [self.tableView indexPathForSelectedRow];
         
-        long row = [myPath row];
+        row = [myPath row];
         
         mainView.row = row;
         [notificationCenter postNotificationName:@"drawRouteOnMap" object:self];
         [self dismissViewControllerAnimated:YES completion:nil];
         
     }
-        
+    
     
 }
 
-
-//manage the gestures
 -(void)manageGestureRecognizer:(UIGestureRecognizer *)sender
 {
     if([sender isKindOfClass:[UILongPressGestureRecognizer class]])
     {
         if([sender state] == UIGestureRecognizerStateEnded)
         {
-            NSLog(@"LONGPRESS!");
-          [self performSegueWithIdentifier:@"mainView" sender:self];
+            //            [self performSegueWithIdentifier:@"mainView" sender:self];
             
-
-//            MainView *main = [[MainView alloc] init];
-//            
-//            main = [self.storyboard instantiateViewControllerWithIdentifier:@"mainView"];
-//            NSLog(@"%lu minha row", row);
-//            main.row = row;
-//                        Sai da tableViewController
-//            [self presentViewController:main animated:YES completion:nil];
-        }
-        else if([sender isKindOfClass:[UITapGestureRecognizer class]])
-        {
-            if([sender state] == UIGestureRecognizerStateEnded)
-            {
-                NSLog(@"TAPGESTURE!");
-                [self performSegueWithIdentifier:@"showDetails" sender:self];
-            }
+            MainView *main = [[MainView alloc] init];
+            
+            main = [self.storyboard instantiateViewControllerWithIdentifier:@"mainView"];
+            NSLog(@"%lu minha row", row);
+            main.row = row;
+            //                        Sai da tableViewController
+            [self presentViewController:main animated:YES completion:nil];
         }
     }
 }
 
+//manage the gestures
+//-(void)manageGestureRecognizer:(UIGestureRecognizer *)sender
+//{
+////    if([sender isKindOfClass:[UILongPressGestureRecognizer class]])
+////    {
+////        if([sender state] == UIGestureRecognizerStateEnded)
+////        {
+////            NSLog(@"LONGPRESS!");
+////            [self performSegueWithIdentifier:@"mainView" sender:self];
+////            
+////            
+////            //            MainView *main = [[MainView alloc] init];
+////            //
+////            //            main = [self.storyboard instantiateViewControllerWithIdentifier:@"mainView"];
+////            //            NSLog(@"%lu minha row", row);
+////            //            main.row = row;
+////            //                        Sai da tableViewController
+////            //            [self presentViewController:main animated:YES completion:nil];
+////        }
+////        else if([sender isKindOfClass:[UITapGestureRecognizer class]])
+////        {
+////            if([sender state] == UIGestureRecognizerStateEnded)
+////            {
+////                NSLog(@"TAPGESTURE!");
+////                [self performSegueWithIdentifier:@"showDetails" sender:self];
+////            }
+////        }
+////    }
+//    
+//}
+
 
 - (IBAction)goBack:(id)sender {
-        [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
